@@ -1,0 +1,122 @@
+
+<!--
+  Let’s imagine you have a DistantGalaxy.woff font file.
+  Add your font file to public/fonts/.
+  Add an @font-face statement to your CSS. This could be in a global .css
+-->
+global.css
+|
+@font-face {
+  font-family: 'DistantGalaxy';
+  src: url('/fonts/DistantGalaxy.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+---
+// Access images in `public/images/`
+---
+<img src="/images/logo.png" />
+---
+// Access images in `src/images/` compile time
+import logo from '../images/logo.png';
+---
+<img src={logo} width="40" alt="Astro" />
+
+<!--
+  slots, and named slots
+  --->
+wrapper.astro 
+|
+<Header />
+<slot name="after-header"/>
+<Logo />
+<slot />
+<slot name="before-footer"/>
+<Footer />
+
+index.astro
+|
+<Wrapper>
+<h2 slot="after-header">{title}</h2>
+<p>this stuff goes in default slot</p>
+<p slot="before-footer">this goes before the footer</p>
+<Wrapper/>
+
+
+
+<!--
+  passing in components props
+  --->
+index.astro
+|
+<Wrapper title="Welcome"></Wrapper>
+
+Wrapper.astro
+|
+---
+const { title } = astro.props
+---
+<div>
+<h1>{title}</h1>
+</div>
+
+<!--
+  fragments and dynamically creating html elements
+  --->
+nav.astro
+|
+---
+const items = ["about", "contact", "home"];
+---
+<ul>
+  {items.map((item) => (
+    <>
+      <li>Red {item}</li>
+      <li>Blue {item}</li>
+      <li>Green {item}</li>
+    </>
+  ))}
+</ul>
+
+<!--
+  Conditional html
+  --->
+popup.astro
+|
+---
+const visible = true;
+---
+{visible && <p>Show me!</p>}
+
+{visible ? <p>Show me!</p> : <p>Else show me!</p>}
+
+
+<!--
+  Dynamic attributes
+-->
+---
+const name = "Astro";
+const section = ["welcome", "goodbye", "discover"].reduce((acc, next) => {
+return acc > next ? acc : next;
+}, "");
+---
+<h1 class={name}>Attribute expressions are supported</h1>
+<MyComponent title={section} />
+
+
+<!--
+  Dynamic attributes
+-->
+---
+const data = await fetch('SOME_SECRET_API_URL/users').then(r => r.json());
+---
+<Component>
+  <p>{data}</p>
+</Component>
+
+
+
+
+

@@ -1,0 +1,13 @@
+---
+import Layout from "~/layouts/BaseLayout.astro";
+
+import Header from "~/components/navbar/Header.astro";
+import Footer from "~/components/footer/Footer.astro";
+
+---
+
+<Layout>
+  <Header />
+    <slot />
+  <Footer />
+</Layout>

@@ -1,0 +1,87 @@
+<!--
+
+Astro components that generate routes dynamically 
+have access to an Astro.params object for each route. 
+This allows you to use those generated parts of the URL 
+in your component script and template.
+
+-->
+for the path: /[org]/[repo]/tree/[branch]/[...file]
+{
+  org: 'withastro',
+  repo: 'astro',
+  branch: 'main',
+  file: 'docs/public/favicon.svg'
+}
+
+<!--
+  dynamically create index.html at root level by including
+  a {slug: undefined} object in static paths function
+  --->
+pages/[...slug].astro
+|
+---
+export async function getStaticPaths() {
+  const pages = [
+    {
+      slug: undefined,
+      title: "Astro Store",
+      text: "Welcome to the Astro store!",
+    },
+    {
+      slug: "products",
+      title: "Astro products",
+      text: "We have lots of products for you",
+    },
+    {
+      slug: "products/astro-handbook",
+      title: "The ultimative Astro handbook",
+      text: "If you want to learn Astro, you must read this book.",
+    },
+  ];
+  return pages.map(({ slug, title, text }) => {
+    return {
+      params: { slug },
+      props: { title, text },
+    };
+  });
+}
+
+
+const { title, text } = Astro.props;
+---
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <p>{text}</p>
+  </body>
+</html>
+
+<!--
+  Routing and dynamic routes
+-->
+pages/blog/[slug].astro → /blog/hello-world /blog/post-2 
+
+pages/[username]/settings.astro → /fred/settings /drew/settings 
+
+pages/[lang]-[version]/info.astro → /en-v1/info /fr-v2/info 
+
+---
+const { id, comment } = Astro.params;
+---
+<!--// Astro.params object passed for the route `/post/abc/a-comment`-->
+{ "id": "abc", "comment": "a-comment" }
+
+---
+pages/[...categories]/[category]/[...page].astro   export async function getStaticPaths({ paginate }) {
+pages/[...tags]/[tag]/[...page].astro              export async function getStaticPaths({ paginate }) {
+pages/[...blog]/[slug].astro                       export async function getStaticPaths() {
+pages/[...blog]/[...page].astro                    export async function getStaticPaths({ paginate }) {
+---
+
+
+
+
