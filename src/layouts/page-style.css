@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftside {
+  flex: 15%;
+  background: white;
+}
+.rightside {
+  flex: 15%;
+  background: white;
+}
+
+/* Main column */
+.main {
+  flex: 60%;
+  background-color: white;
+  border: black 3px dashed;
+  padding: 0px;
+}
+

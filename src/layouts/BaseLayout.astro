@@ -1,5 +1,5 @@
 ---
-import "~/assets/styles/base.css";
+import "./base-style.css";
 import BasicScripts from "~/components/core/BasicScripts.astro";
 
 ---
@@ -8,8 +8,9 @@ import BasicScripts from "~/components/core/BasicScripts.astro";
 <html lang="en">
 <head>
 </head>
-<body class="body">
+<body>
   <slot />
+  <slot name="footer"/>
   <BasicScripts defer/>
 </body>
 </html>

@@ -1,12 +1,11 @@
 ---
+import './style.css';
 const { } = Astro.props;
 ---
 
-<footer>
-<a >AstroWind</a>
-<a href="#">Terms </a> ·
-<a href="#">Privacy Policy </a>
-Product
+<div class="footer">
+  <video id="videoBg" autoplay="" playsinline="" muted="" loop=""><source src={import('~/assets/videos/footer-bg.mp4')} type="video/mp4"></video>
+<p>Product</p>
 <ul >
 <li >
 <a href="#">Features </a>
@@ -30,7 +29,7 @@ Product
 <a href="#">Resources </a>
 </li>
 </ul>
-Platform
+<p>Platform</p>
 <ul >
 <li >
 <a href="#">Developer API </a>
@@ -48,7 +47,7 @@ Platform
 <a href="#">GitHub Desktop </a>
 </li>
 </ul>
-Support
+<p>Support</p>
 <ul >
 <li >
 <a href="#">Docs </a>
@@ -66,7 +65,7 @@ Support
 <a href="#">Status </a>
 </li>
 </ul>
-Company
+<p>Company</p>
 <ul >
 <li >
 <a href="#">About </a>
@@ -90,30 +89,5 @@ Company
 <a href="#">Shop </a>
 </li>
 </ul>
-Subscribe
-<p >
-Get the latest news and articles to your inbox every month.
-</p>
-<form>
-  <label >Email </label>
-  <input id="newsletter" type="email" placeholder="Your email" />
-  <button type="submit" >
-  <span aria-hidden="true"></span>
-  </button>
-</form>
-<ul >
-<li>
-<a aria-label="Twitter" href="#"> </a>
-</li>
-<li >
-<a aria-label="Instagram" href="#"> </a>
-</li>
-<li >
-<a aria-label="Facebook" href="#"> </a>
-</li>
-<li >
-<a aria-label="Github" href="https://github.com/onwidget/astrowind"> </a>
-</li>
-</ul>
-Made by <a> onWidget </a>. All rights reserved.
-</footer>
+</div>
+

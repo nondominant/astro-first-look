@@ -1,13 +1,27 @@
 ---
 import Layout from "~/layouts/BaseLayout.astro";
-
 import Header from "~/components/navbar/Header.astro";
 import Footer from "~/components/footer/Footer.astro";
+import "./page-style.css";
 
 ---
 
 <Layout>
-  <Header />
-    <slot />
-  <Footer />
+  <Header/>
+    <div class="row">
+
+      <div class="leftside">
+        <slot name="leftside"/>
+      </div>
+
+      <div class="main">
+        <slot name="main"/>
+      </div>
+
+      <div class="rightside">
+        <slot name="rightside"/>
+      </div>
+
+    </div>
+  <Footer slot="footer"/>
 </Layout>
