@@ -1,9 +1,10 @@
 ---
-import Page from "~/layouts/PageLayout.astro";
+import Page from "~/layouts/HolyGrail.astro";
+import Card from "~/components/gridsection/GridB.astro";
+import Section from "~/components/gridsection/GridA.astro";
 ---
 
 <Page>
-<div slot="leftside" style="height:300px; width:100px; background: red;"></div>
-<div slot="main" style="height:300px; width:100px; background: green;"></div>
-<div slot="rightside" style="height:300px; width:100px; background: yellow;"></div>
+  <Card/>
+  <Section/>
 </Page>

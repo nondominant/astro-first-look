@@ -1,18 +1,17 @@
-.footer {
-  margin-top: 2em;
-  padding: 0px;
-  text-align: center;
-  background: #ddd;
-  position: relative;
-
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(100,100,100,1);
+  padding-top: 2rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  min-height: 60rem;
 }
 
-video {
-  width :100%;
-  height: auto;
-}
-
-.footer:after {
+.footer-content:after {
   content: '';
   position: absolute;
   top: 0;
@@ -21,6 +20,32 @@ video {
   height: 100%;
   background: rgba(5,0,10,1);
   animation: pulse 5s infinite alternate;
+  z-index: -1;
+}
+.footer-item a, p {
+  text-decoration: none;
+  color: white;
+  z-index: 99;
+}
+.footer-item p {
+  font-size: 1em !important;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item li, ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 0 5rem;
+  width: auto;
 }
 
 @keyframes pulse {

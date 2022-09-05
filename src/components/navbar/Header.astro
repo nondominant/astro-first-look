@@ -1,31 +1,18 @@
 ---
-
+import './header-style.css';
 const { } = Astro.props;
 ---
 
 <header>
-<a href="#"></a>
-<button type="button" aria-label="Toggle between Dark and Light mode">
-</button>
-<button aria-label="Toggle Menu">
-</button>
-    <nav aria-label="Main navigation" id="menu">
-      <ul>
-        <li>
-          <a href="#">Pages </a>
-        </li>
-        <li>
-          <a href="#">Resources </a>
-        </li>
-        <li>
-          <a href="#">Blog </a>
-        </li>
-        <li >
-          <a href="https://github.com/onwidget/astrowind"> Github </a>
-        </li>
-      </ul>
-<button type="button"
-aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme>
-</button>
+<nav aria-label="Main navigation" class="menu">
+<ul>
+<li> <a href="#">Pages </a> </li>
+<li> <a href="#">Resources </a> </li>
+<li> <a href="#">Blog </a> </li>
+<li> <a href="https://github.com/onwidget/astrowind"> Github </a> </li>
+<li> <button type="button" aria-label="Toggle between Dark and Light mode"> </button> </li>
+<li> <button aria-label="Toggle Menu"> </button> </li>
+<li> <button type="button" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme> </button> </li>
+</ul>
 </nav>
 </header>

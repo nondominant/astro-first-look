@@ -1,21 +1,10 @@
-* {
-box-sizing: border-box;
-}
-section {
-  box-sizing: border-box;
-  display: grid;
-  background: rgba(100,37,68,1);
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: minmax(1rem, 1fr) minmax(0, 60rem) minmax(1rem, 1fr);
+.basic-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+ }
 
-  gap: 1em ;
-  border: solid red 2px;
-}
+.basic-grid div {
+  border: red dashed 2px;
 
-div {
-  height: 400px;
-  width: 350px;
-  background: rgba(100,255,200,0.8);
-  
 }

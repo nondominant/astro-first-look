@@ -1,0 +1,21 @@
+---
+import Layout from "~/layouts/BaseLayout.astro";
+import Header from "~/components/navbar/Header.astro";
+import Footer from "~/components/footer/Footer.astro";
+import "./holy.css";
+import "./reset.css";
+import BasicScripts from "~/components/core/BasicScripts.astro";
+---
+
+<Layout>
+  <body class="container">
+   <header>Header</header>
+   <nav>Navigation</nav>
+   <main>
+     <slot/>
+   </main>
+   <aside>Related links</aside>
+   <footer>Footer</footer>
+   <BasicScripts/>
+  </body>
+</Layout>

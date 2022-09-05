@@ -5,22 +5,24 @@
 .row {  
   display: flex;
   flex-wrap: wrap;
+  height: 1800px;
 }
 
 .leftside {
   flex: 15%;
-  background: white;
+  background: yellow;
+  padding: 0;
 }
 .rightside {
   flex: 15%;
-  background: white;
+  background: red;
+  padding: 0;
 }
 
 /* Main column */
 .main {
   flex: 60%;
   background-color: white;
-  border: black 3px dashed;
-  padding: 0px;
+  padding: 0;
 }
 

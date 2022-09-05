@@ -3,10 +3,12 @@ import Layout from "~/layouts/BaseLayout.astro";
 import Header from "~/components/navbar/Header.astro";
 import Footer from "~/components/footer/Footer.astro";
 import "./page-style.css";
-
+import "./reset.css";
+import BasicScripts from "~/components/core/BasicScripts.astro";
 ---
 
 <Layout>
+  <body>
   <Header/>
     <div class="row">
 
@@ -23,5 +25,7 @@ import "./page-style.css";
       </div>
 
     </div>
-  <Footer slot="footer"/>
+  <Footer/>
+  <BasicScripts defer/>
+  </body>
 </Layout>
