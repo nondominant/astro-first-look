@@ -1,0 +1,43 @@
+---
+import './flexhero.css';
+---
+
+<!-- the background image is applied to the .hero class using
+  css -->
+<style>
+  h1, h2, a {
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+  }
+  h2 {
+    padding: 1em;
+  }
+  [data-is-top="true"] .hero-inner h1{
+    opacity: 1;
+    transition: all 1s ease;
+  }
+  [data-is-top="false"] .hero-inner h1{
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  [data-is-top="true"] .hero-inner h2{ opacity: 1;transition: all 1s ease; }
+  [data-is-top="false"] .hero-inner h2{ opacity: 0;transition: all 1s ease; }
+  a{
+    background: grey;
+    padding: 3px 6px;
+    border-radius: 6px;
+  }
+  a:hover {
+    border: solid 2px rgba(240, 165, 2,1);
+  }
+</style>
+
+<section class="hero scrollobserver">
+  <div class="hero-inner">
+    <h1>Better than Spindle</h1>
+  <h2>Look at this website and bask in its amazing glory!</h2>
+  <a href="https://example.com/" class="btn">Go ahead</a>
+  </div>
+</section>
+

@@ -1,0 +1,35 @@
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: 
+    linear-gradient(rgba(255, 200, 200, 0.5),rgba(0, 0, 0, 0.5)),
+    url("https://img.favpng.com/19/1/0/data-analysis-vector-graphics-analytics-stock-photography-png-favpng-Q5L43fTUFgW8MYA9e2uHN3Xw2.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: fade 2.5s ease forwards;
+}
+
+.hero h1 {
+    font-size: 5em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.temp {
+  background-image: url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+}
