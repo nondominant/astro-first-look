@@ -30,8 +30,6 @@ function processForm(e) {
   for (let i = 0; i < arr.length; i++) {
       initial[arr[i]] = val[i];
   }
-  console.log("object ", initial);
-
 
   let formObject = {
       "id" : initial.id,
@@ -49,7 +47,6 @@ function processForm(e) {
       "materialsUsed" : initial.consumables,
       "furtherAction" : initial.furtheraction
     }
-    console.log(formObject);
 
     fetch("http://192.168.1.252/server/new", {
     //fetch("http://localhost:3000/", {
@@ -59,7 +56,6 @@ function processForm(e) {
           'Content-Type': 'application/json'}, 
     body: JSON.stringify(formObject)
       }).then(res => {
-          console.log("response:", res);
           document.getElementById("my-form").reset();
           let dateSelector = document.getElementById('dateselector');
           //let today = new Date().toISOString().split('T')[0];
@@ -67,9 +63,7 @@ function processForm(e) {
           const today = new Date()
           const tomorrow = new Date(today)
           tomorrow.setDate(tomorrow.getDate() + 1)
-
           dateSelector.valueAsDate = tomorrow;
-
           let form = document.querySelector('#my-form')
           form.classList.remove("flash");
           var result = confirm( "Thanks! your submission was saved" );
