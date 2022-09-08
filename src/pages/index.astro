@@ -1,37 +1,9 @@
 ---
-import Page from "~/layouts/PageLayout.astro";
-import DuoTone from "~/components/calltoaction/DuoToneCTA.astro";
-import GiantButton from "~/components/calltoaction/GiantButtonCTA.astro";
-import BreakLeft from "~/components/sectionbreak/BreakLeftOverlay.astro";
-import BreakRight from "~/components/sectionbreak/BreakRightOverlay.astro";
-import BreakCenter from "~/components/sectionbreak/BreakCenterOverlay.astro";
-import SvgBottom from "~/components/sectionbreak/BreakSvgBottom.astro";
-import Background from "~/components/featuresection/SvgBackground.astro";
-import SideBar from "~/components/sidebar/HighlightedSidebar.astro";
-import Bubble from "~/components/sidebar/CollapsibleSidebar.astro";
-
+import Page from "~/layouts/FormLayout.astro";
+import Form from "~/components/form/JobSheet.astro";
 ---
 
 
 <Page>
-  <Bubble>
-  </Bubble>
-  <BreakCenter/>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
-  <DuoTone>
-  </DuoTone>
-  <div slot="rightside">goodbye</div>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
-  <BreakLeft />
-  <BreakRight/>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
+  <Form/>
 </Page>

@@ -1,0 +1,278 @@
+---
+---
+<script>
+let dateSelector = document.getElementById('dateselector');
+  //let today = new Date().toISOString().split('T')[0];
+  //dateSelector.value = today;
+  const today = new Date()
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
+
+  dateSelector.valueAsDate = tomorrow;
+
+let form = document.getElementById('my-form');
+  if (form.attachEvent) {
+      form.attachEvent("submit", processForm);
+  } else {
+      form.addEventListener("submit", processForm);
+  }
+function processForm(e) {
+  if (e.preventDefault) e.preventDefault();
+
+  const data = new FormData(e.target);
+  const arr = [...data.keys()];
+  const val = [...data.values()];
+
+  let initial = {
+   "id" : Math.floor(1000 + (Math.random() * 8000)),
+    "department" : "default"
+  }
+  for (let i = 0; i < arr.length; i++) {
+      initial[arr[i]] = val[i];
+  }
+  console.log("object ", initial);
+
+
+  let formObject = {
+      "id" : initial.id,
+      "quote" : initial.description,
+      "source" : "",
+      "author" : initial.namefield,
+      "year" : initial.dateselector,
+      "updateList" : [],
+      "urgency" : "low",
+      "startTime" : initial.starttime,
+      "endTime" : initial.endtime,
+      "equipment" : initial.Equipment,
+      "location" : initial.department,
+      "partsUsed" : initial.parts,
+      "materialsUsed" : initial.consumables,
+      "furtherAction" : initial.furtheraction
+    }
+    console.log(formObject);
+
+    //fetch("http://192.168.1.252/server/new", {
+    fetch("http://localhost:3000/", {
+    method: "POST",
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'}, 
+    body: JSON.stringify(formObject)
+      }).then(res => {
+          console.log("response:", res);
+          document.getElementById("my-form").reset();
+          let form = document.querySelector('#my-form')
+          form.classList.remove("flash");
+          var result = confirm( "Thanks! your submission was saved" );
+          if ( result ) {
+            form.classList.add("flash");
+          } else {
+            form.classList.add("flash");
+          }
+
+  });
+  // You must return false to prevent the default form behavior
+  return false;
+}
+</script>
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  }
+  .flash{
+    background: green;
+    animation: green 3s ease forwards;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+  }
+    button {
+    margin-left: auto !important;
+    padding: 1rem;
+    width: 100px;
+    font-family: 'Helvetica', 'Arial', sans-serif !important;
+    font-size: 16px;
+    font-weight: 900;
+    color: white;
+    border: none !important;
+    outline: none !important;
+    background: linear-gradient(270deg, rgba(17,184,237,1) 4%, rgba(11,231,55,1) 95%);
+  }
+  label {
+    padding-right: 1rem;
+    font-weight: 900;
+    font-family: 'Helvetica', 'Arial', sans-serif !important;
+    font-size: 16;
+  }
+  input[type="text"] {
+    border: none !important;
+    outline: none !important;
+    font-size: 16px;
+    padding: 1rem;
+    height: 2rem;
+    width: 13rem;
+  }
+    input[type="time"] {
+    border: none !important;
+    outline: none !important;
+    margin-right: 3rem;
+    height: 2rem;
+    width: 7rem !important;
+
+  }
+
+  input[type="date"] {
+    border: none !important;
+    outline: none !important;
+    margin-left: auto !important;
+    font-size: 16 !important;
+    height: 2rem !important;
+  }
+
+  input,
+  ::placeholder{
+overflow: visible;
+}
+input,
+input::placeholder {
+    font-size: 16px;
+}
+textarea {
+    font-family: 'Helvetica', 'Arial', sans-serif !important;
+    margin: 0.5rem;
+  font-size: 16px !important;
+  resize: none !important;
+  width: 100% !important;
+  height: 100px !important;
+  padding: 1rem !important;
+  outline: none !important;
+  border: none !important;
+}
+
+select {
+  font-family: 'Helvetica', 'Arial', sans-serif !important;
+  border: none !important;
+  outline: none !important;
+  margin: 0.5rem;
+  width: 100%;
+  height: 3rem;
+}
+
+
+  #my-form{
+    transition: all 5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background: rgba(30,30,100,0.1);
+    padding: 4rem;
+    min-height: 80vh;
+  }
+  #my-form * {
+  }
+  .time {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem;
+  }
+  .date {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem;
+  }
+  @keyframes green {
+    from {
+      background: green;
+    }
+    to {
+      background: rgba(30,30,100,0.1);
+
+    }
+  }
+  @media (max-width: 680px) {
+
+  .time {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .date {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  input[type="date"] {
+    margin: 1rem 0px;
+    margin-left: 0 !important;
+  }
+  label {
+    margin-bottom: 2px;
+    padding-top: 4px;
+  }
+  }
+</style>
+
+<div class="container">
+<form id="my-form">
+  <div class="time">
+  <label for="endtime">End Time:</label>
+<input type="time" id="endtime" name="endtime"
+       min="04:00" max="22:00" required>
+  <label for="starttime">Start Time:</label>
+<input type="time" id="starttime" name="starttime"
+       min="04:00" max="22:00" required>
+  </div>
+  <div class="date">
+   <input id="namefield" type="text" name="namefield" placeholder="Name" required>
+ <input type="date" id="dateselector" name="dateselector" value="2018-07-22">
+  </div>
+<select name="Equipment" placeholder="Select Equipment">
+  <optgroup label="Equipment"style="font-family:'helvetica', 'arial';font-size: 16px;">
+    >
+  <option value="CBW 1">CBW 1</option>
+  <option value="CBW 2">CBW 2</option>
+  <option value="CBW 3">CBW 3</option>
+  <option value="CBW 1 Dryers">CBW 1 Dryers</option>
+  <option value="CBW 2 Dryers">CBW 2 Dryers</option>
+  <option value="CBW 3 Dryers">CBW 3 Dryers</option>
+  <option value="Pharmagg 1">Pharmagg 1</option>
+  <option value="Pharmagg 2">Pharmagg 2</option>
+  <option value="Ironer 1">Ironer 1</option>
+  <option value="Ironer 2">Ironer 2</option>
+  <option value="Ironer 3">Ironer 3</option>
+  <option value="Ironer 4">Ironer 4</option>
+  <option value="Ironer 5">Ironer 5</option>
+  <option value="Industrial Fax Folder">Industrial Fax Folder</option>
+  <option value="Healthcare Fax Folder 1">Healthcare Fax Folder 1</option>
+  <option value="Healthcare Fax Folder 2">Healthcare Fax Folder 2</option>
+  <option value="Healthcare Fax Folder 3">Healthcare Fax Folder 3</option>
+  <option value="Healthcare Steam Tunnel">Healthcare Steam Tunnel</option>
+  <option value="Industrial Steam Tunnel">Industrial Steam Tunnel</option>
+  <option value="Industrial Garment Hanging Stations">Industrial Garment Hanging Stations</option>
+  <option value="Healthcare Garment Hanging Stations">Healthcare Garment Hanging Stations</option>
+  <option value="Towel Folder 1">Towel Folder 1</option>
+  <option value="Towel Folder 2">Towel Folder 2</option>
+  <option value="Blanket Blaster">Blanket Blaster</option>
+  <option value="Industrial Hoist">Industrial Hoist</option>
+  <option value="Hoist">Hoist</option>
+  <option value="Dry Cleaning">Dry Cleaning</option>
+</optgroup>
+</select>
+  <textarea name="description" name="description" id="description" placeholder="Job Description" required></textarea>
+  <textarea name="parts"  name="parts" id="parts" placeholder="parts used"></textarea>
+  <textarea name="consumables" name="consumables" id="consumables" placeholder="consumables used"></textarea>
+  <textarea name="furtheraction" name="furtheraction" id="furtheraction" placeholder="further action needed?"></textarea>
+  <button type="submit">Submit</button>
+
+</form>
+</div>
