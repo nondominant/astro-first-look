@@ -51,8 +51,8 @@ function processForm(e) {
     }
     console.log(formObject);
 
-    //fetch("http://192.168.1.252/server/new", {
-    fetch("http://localhost:3000/", {
+    fetch("http://192.168.1.252/server/new", {
+    //fetch("http://localhost:3000/", {
     method: "POST",
       headers: {
           'Accept': 'application/json',
@@ -61,6 +61,15 @@ function processForm(e) {
       }).then(res => {
           console.log("response:", res);
           document.getElementById("my-form").reset();
+          let dateSelector = document.getElementById('dateselector');
+          //let today = new Date().toISOString().split('T')[0];
+          //dateSelector.value = today;
+          const today = new Date()
+          const tomorrow = new Date(today)
+          tomorrow.setDate(tomorrow.getDate() + 1)
+
+          dateSelector.valueAsDate = tomorrow;
+
           let form = document.querySelector('#my-form')
           form.classList.remove("flash");
           var result = confirm( "Thanks! your submission was saved" );
