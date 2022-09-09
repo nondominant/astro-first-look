@@ -48,32 +48,37 @@ function processForm(e) {
       "furtherAction" : initial.furtheraction
     }
 
-    fetch("http://192.168.1.252/server/new", {
-    //fetch("http://localhost:3000/", {
-    method: "POST",
-      headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'}, 
-    body: JSON.stringify(formObject)
-      }).then(res => {
-          document.getElementById("my-form").reset();
-          let dateSelector = document.getElementById('dateselector');
-          //let today = new Date().toISOString().split('T')[0];
-          //dateSelector.value = today;
-          const today = new Date()
-          const tomorrow = new Date(today)
-          tomorrow.setDate(tomorrow.getDate() + 1)
-          dateSelector.valueAsDate = tomorrow;
-          let form = document.querySelector('#my-form')
-          form.classList.remove("flash");
-          var result = confirm( "Thanks! your submission was saved" );
-          if ( result ) {
-            form.classList.add("flash");
-          } else {
-            form.classList.add("flash");
-          }
+fetch("http://192.168.1.252/server/new", {
+  //fetch("http://localhost:3000/", {
+  method: "POST",
+  headers: {
+    'Accept': 'application/json',	
+    'Content-Type': 'application/json'}, 
+  body: JSON.stringify(formObject)
+}).then(res => {
+  if(res.status == 500) {
+    return;
+  } else {
+    console.log("response ", res);
 
-  });
+    document.getElementById("my-form").reset();
+    let dateSelector = document.getElementById('dateselector');
+    //let today = new Date().toISOString().split('T')[0];
+    //dateSelector.value = today;
+    const today = new Date()
+    const tomorrow = new Date(today)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    dateSelector.valueAsDate = tomorrow;
+    let form = document.querySelector('#my-form')
+    form.classList.remove("flash");
+    var result = confirm( "Thanks! your submission was saved" );
+    if ( result ) {
+      form.classList.add("flash");
+    } else {
+      form.classList.add("flash");
+    }
+  }
+});
   // You must return false to prevent the default form behavior
   return false;
 }
@@ -109,6 +114,7 @@ function processForm(e) {
     background: linear-gradient(270deg, rgba(17,184,237,1) 4%, rgba(11,231,55,1) 95%);
   }
   label {
+    margin-left: 3rem;
     padding-right: 1rem;
     font-weight: 900;
     font-family: 'Helvetica', 'Arial', sans-serif !important;
@@ -125,7 +131,6 @@ function processForm(e) {
     input[type="time"] {
     border: none !important;
     outline: none !important;
-    margin-right: 3rem;
     height: 2rem;
     width: 7rem !important;
 
@@ -228,6 +233,7 @@ select {
 <div class="container">
 <form id="my-form">
   <div class="time">
+ <input type="date" id="dateselector" name="dateselector" value="2018-07-22">
   <label for="starttime">Start Time:</label>
 <input type="time" id="starttime" name="starttime"
        min="04:00" max="22:00" required>
@@ -237,7 +243,6 @@ select {
   </div>
   <div class="date">
    <input id="namefield" type="text" name="namefield" placeholder="Name" required>
- <input type="date" id="dateselector" name="dateselector" value="2018-07-22">
   </div>
 <select name="Equipment" placeholder="Select Equipment">
   <optgroup label="Equipment"style="font-family:'helvetica', 'arial';font-size: 16px;">

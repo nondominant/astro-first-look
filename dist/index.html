@@ -3,61 +3,61 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="/assets/index.88e378f3.css"><script type="module">let h=document.getElementById("dateselector");const y=new Date,r=new Date(y);r.setDate(r.getDate()+1);h.valueAsDate=r;let n=document.getElementById("my-form");n.attachEvent?n.attachEvent("submit",i):n.addEventListener("submit",i);function i(a){a.preventDefault&&a.preventDefault();const l=new FormData(a.target),d=[...l.keys()],m=[...l.values()];let e={id:Math.floor(1e3+Math.random()*8e3),department:"default"};for(let t=0;t<d.length;t++)e[d[t]]=m[t];let c={id:e.id,quote:e.description,source:"",author:e.namefield,year:e.dateselector,updateList:[],urgency:"low",startTime:e.starttime,endTime:e.endtime,equipment:e.Equipment,location:e.department,partsUsed:e.parts,materialsUsed:e.consumables,furtherAction:e.furtheraction};return fetch("http://192.168.1.252/server/new",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify(c)}).then(t=>{document.getElementById("my-form").reset();let u=document.getElementById("dateselector");const f=new Date,s=new Date(f);s.setDate(s.getDate()+1),u.valueAsDate=s;let o=document.querySelector("#my-form");o.classList.remove("flash");var p=confirm("Thanks! your submission was saved");o.classList.add("flash")}),!1}
+  <link rel="stylesheet" href="/assets/index.905ab0ea.css"><script type="module">let h=document.getElementById("dateselector");const y=new Date,r=new Date(y);r.setDate(r.getDate()+1);h.valueAsDate=r;let n=document.getElementById("my-form");n.attachEvent?n.attachEvent("submit",i):n.addEventListener("submit",i);function i(a){a.preventDefault&&a.preventDefault();const l=new FormData(a.target),d=[...l.keys()],c=[...l.values()];let e={id:Math.floor(1e3+Math.random()*8e3),department:"default"};for(let t=0;t<d.length;t++)e[d[t]]=c[t];let m={id:e.id,quote:e.description,source:"",author:e.namefield,year:e.dateselector,updateList:[],urgency:"low",startTime:e.starttime,endTime:e.endtime,equipment:e.Equipment,location:e.department,partsUsed:e.parts,materialsUsed:e.consumables,furtherAction:e.furtheraction};return fetch("http://192.168.1.252/server/new",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify(m)}).then(t=>{if(t.status!=500){console.log("response ",t),document.getElementById("my-form").reset();let f=document.getElementById("dateselector");const p=new Date,o=new Date(p);o.setDate(o.getDate()+1),f.valueAsDate=o;let s=document.querySelector("#my-form");s.classList.remove("flash");var u=confirm("Thanks! your submission was saved");s.classList.add("flash")}}),!1}
 </script></head><body class="astro-RJNBGWRA">
     
 
 
 
-<div class="container astro-XMP35AUU">
-<form id="my-form" class="astro-XMP35AUU">
-  <div class="time astro-XMP35AUU">
-  <label for="starttime" class="astro-XMP35AUU">Start Time:</label>
-<input type="time" id="starttime" name="starttime" min="04:00" max="22:00" required="" class="astro-XMP35AUU">
-  <label for="endtime" class="astro-XMP35AUU">End Time:</label>
-<input type="time" id="endtime" name="endtime" min="04:00" max="22:00" required="" class="astro-XMP35AUU">
+<div class="container astro-LCWLHT7S">
+<form id="my-form" class="astro-LCWLHT7S">
+  <div class="time astro-LCWLHT7S">
+ <input type="date" id="dateselector" name="dateselector" value="2018-07-22" class="astro-LCWLHT7S">
+  <label for="starttime" class="astro-LCWLHT7S">Start Time:</label>
+<input type="time" id="starttime" name="starttime" min="04:00" max="22:00" required="" class="astro-LCWLHT7S">
+  <label for="endtime" class="astro-LCWLHT7S">End Time:</label>
+<input type="time" id="endtime" name="endtime" min="04:00" max="22:00" required="" class="astro-LCWLHT7S">
   </div>
-  <div class="date astro-XMP35AUU">
-   <input id="namefield" type="text" name="namefield" placeholder="Name" required="" class="astro-XMP35AUU">
- <input type="date" id="dateselector" name="dateselector" value="2018-07-22" class="astro-XMP35AUU">
+  <div class="date astro-LCWLHT7S">
+   <input id="namefield" type="text" name="namefield" placeholder="Name" required="" class="astro-LCWLHT7S">
   </div>
-<select name="Equipment" placeholder="Select Equipment" class="astro-XMP35AUU">
-  <optgroup label="Equipment" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-XMP35AUU">
+<select name="Equipment" placeholder="Select Equipment" class="astro-LCWLHT7S">
+  <optgroup label="Equipment" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-LCWLHT7S">
     &gt;
-  <option value="CBW 1" class="astro-XMP35AUU">CBW 1</option>
-  <option value="CBW 2" class="astro-XMP35AUU">CBW 2</option>
-  <option value="CBW 3" class="astro-XMP35AUU">CBW 3</option>
-  <option value="CBW 1 Dryers" class="astro-XMP35AUU">CBW 1 Dryers</option>
-  <option value="CBW 2 Dryers" class="astro-XMP35AUU">CBW 2 Dryers</option>
-  <option value="CBW 3 Dryers" class="astro-XMP35AUU">CBW 3 Dryers</option>
-  <option value="Pharmagg 1" class="astro-XMP35AUU">Pharmagg 1</option>
-  <option value="Pharmagg 2" class="astro-XMP35AUU">Pharmagg 2</option>
-  <option value="Ironer 1" class="astro-XMP35AUU">Ironer 1</option>
-  <option value="Ironer 2" class="astro-XMP35AUU">Ironer 2</option>
-  <option value="Ironer 3" class="astro-XMP35AUU">Ironer 3</option>
-  <option value="Ironer 4" class="astro-XMP35AUU">Ironer 4</option>
-  <option value="Ironer 5" class="astro-XMP35AUU">Ironer 5</option>
-  <option value="Industrial Fax Folder" class="astro-XMP35AUU">Industrial Fax Folder</option>
-  <option value="Healthcare Fax Folder 1" class="astro-XMP35AUU">Healthcare Fax Folder 1</option>
-  <option value="Healthcare Fax Folder 2" class="astro-XMP35AUU">Healthcare Fax Folder 2</option>
-  <option value="Healthcare Fax Folder 3" class="astro-XMP35AUU">Healthcare Fax Folder 3</option>
-  <option value="Healthcare Steam Tunnel" class="astro-XMP35AUU">Healthcare Steam Tunnel</option>
-  <option value="Industrial Steam Tunnel" class="astro-XMP35AUU">Industrial Steam Tunnel</option>
-  <option value="Industrial Garment Hanging Stations" class="astro-XMP35AUU">Industrial Garment Hanging Stations</option>
-  <option value="Healthcare Garment Hanging Stations" class="astro-XMP35AUU">Healthcare Garment Hanging Stations</option>
-  <option value="Towel Folder 1" class="astro-XMP35AUU">Towel Folder 1</option>
-  <option value="Towel Folder 2" class="astro-XMP35AUU">Towel Folder 2</option>
-  <option value="Blanket Blaster" class="astro-XMP35AUU">Blanket Blaster</option>
-  <option value="Industrial Hoist" class="astro-XMP35AUU">Industrial Hoist</option>
-  <option value="Hoist" class="astro-XMP35AUU">Hoist</option>
-  <option value="Dry Cleaning" class="astro-XMP35AUU">Dry Cleaning</option>
+  <option value="CBW 1" class="astro-LCWLHT7S">CBW 1</option>
+  <option value="CBW 2" class="astro-LCWLHT7S">CBW 2</option>
+  <option value="CBW 3" class="astro-LCWLHT7S">CBW 3</option>
+  <option value="CBW 1 Dryers" class="astro-LCWLHT7S">CBW 1 Dryers</option>
+  <option value="CBW 2 Dryers" class="astro-LCWLHT7S">CBW 2 Dryers</option>
+  <option value="CBW 3 Dryers" class="astro-LCWLHT7S">CBW 3 Dryers</option>
+  <option value="Pharmagg 1" class="astro-LCWLHT7S">Pharmagg 1</option>
+  <option value="Pharmagg 2" class="astro-LCWLHT7S">Pharmagg 2</option>
+  <option value="Ironer 1" class="astro-LCWLHT7S">Ironer 1</option>
+  <option value="Ironer 2" class="astro-LCWLHT7S">Ironer 2</option>
+  <option value="Ironer 3" class="astro-LCWLHT7S">Ironer 3</option>
+  <option value="Ironer 4" class="astro-LCWLHT7S">Ironer 4</option>
+  <option value="Ironer 5" class="astro-LCWLHT7S">Ironer 5</option>
+  <option value="Industrial Fax Folder" class="astro-LCWLHT7S">Industrial Fax Folder</option>
+  <option value="Healthcare Fax Folder 1" class="astro-LCWLHT7S">Healthcare Fax Folder 1</option>
+  <option value="Healthcare Fax Folder 2" class="astro-LCWLHT7S">Healthcare Fax Folder 2</option>
+  <option value="Healthcare Fax Folder 3" class="astro-LCWLHT7S">Healthcare Fax Folder 3</option>
+  <option value="Healthcare Steam Tunnel" class="astro-LCWLHT7S">Healthcare Steam Tunnel</option>
+  <option value="Industrial Steam Tunnel" class="astro-LCWLHT7S">Industrial Steam Tunnel</option>
+  <option value="Industrial Garment Hanging Stations" class="astro-LCWLHT7S">Industrial Garment Hanging Stations</option>
+  <option value="Healthcare Garment Hanging Stations" class="astro-LCWLHT7S">Healthcare Garment Hanging Stations</option>
+  <option value="Towel Folder 1" class="astro-LCWLHT7S">Towel Folder 1</option>
+  <option value="Towel Folder 2" class="astro-LCWLHT7S">Towel Folder 2</option>
+  <option value="Blanket Blaster" class="astro-LCWLHT7S">Blanket Blaster</option>
+  <option value="Industrial Hoist" class="astro-LCWLHT7S">Industrial Hoist</option>
+  <option value="Hoist" class="astro-LCWLHT7S">Hoist</option>
+  <option value="Dry Cleaning" class="astro-LCWLHT7S">Dry Cleaning</option>
 </optgroup>
 </select>
-  <textarea name="description" id="description" placeholder="Job Description" required="" class="astro-XMP35AUU"></textarea>
-  <textarea name="parts" id="parts" placeholder="parts used" class="astro-XMP35AUU"></textarea>
-  <textarea name="consumables" id="consumables" placeholder="consumables used" class="astro-XMP35AUU"></textarea>
-  <textarea name="furtheraction" id="furtheraction" placeholder="further action needed?" class="astro-XMP35AUU"></textarea>
-  <button type="submit" class="astro-XMP35AUU">Submit</button>
+  <textarea name="description" id="description" placeholder="Job Description" required="" class="astro-LCWLHT7S"></textarea>
+  <textarea name="parts" id="parts" placeholder="parts used" class="astro-LCWLHT7S"></textarea>
+  <textarea name="consumables" id="consumables" placeholder="consumables used" class="astro-LCWLHT7S"></textarea>
+  <textarea name="furtheraction" id="furtheraction" placeholder="further action needed?" class="astro-LCWLHT7S"></textarea>
+  <button type="submit" class="astro-LCWLHT7S">Submit</button>
 
 </form>
 </div>
