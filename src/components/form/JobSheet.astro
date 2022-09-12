@@ -14,52 +14,18 @@ function processForm(e) {
   const arr = [...data.keys()];
   const val = [...data.values()];
 
-  let initial = {
-   "id" : Math.floor(1000 + (Math.random() * 8000)),
-    "department" : "default"
-  }
-  for (let i = 0; i < arr.length; i++) {
-      initial[arr[i]] = val[i];
-  }
-
-  let formObject = {
-      "id" : initial.id,
-      "quote" : initial.description,
-      "source" : "",
-      "author" : initial.namefield,
-      "year" : initial.dateselector,
-      "updateList" : [],
-      "urgency" : "low",
-      "startTime" : initial.starttime,
-      "endTime" : initial.endtime,
-      "equipment" : initial.Equipment,
-      "location" : initial.department,
-      "partsUsed" : initial.parts,
-      "materialsUsed" : initial.consumables,
-      "furtherAction" : initial.furtheraction
-    }
-
-fetch("http://192.168.1.252/glimpse", {
+fetch("http://api.ipify.org/?format=json", {
   //fetch("http://localhost:3000/", {
-  method: "POST",
-  headers: {
-    'Accept': 'application/json',	
-    'Content-Type': 'application/json'}, 
-  body: JSON.stringify(formObject)
+  method: 'GET',
+  headers: {'Content-Type': 'application/json'} 
 }).then(res => {
   if(res.status == 500) {
     return;
   } else {
-    console.log("response ", res);
-
     document.getElementById("my-form").reset();
     let dateSelector = document.getElementById('dateselector');
     //let today = new Date().toISOString().split('T')[0];
     //dateSelector.value = today;
-    const today = new Date()
-    const tomorrow = new Date(today)
-    tomorrow.setDate(tomorrow.getDate() + 1)
-    dateSelector.valueAsDate = tomorrow;
     let form = document.querySelector('#my-form')
     form.classList.remove("flash");
     var result = confirm( "updated!!" );
@@ -69,7 +35,9 @@ fetch("http://192.168.1.252/glimpse", {
       form.classList.add("flash");
     }
   }
-});
+  }).catch(err => {
+      console.log(err);
+    });;
   // You must return false to prevent the default form behavior
   return false;
 }
@@ -81,7 +49,7 @@ fetch("http://192.168.1.252/glimpse", {
     font-family: 'Helvetica', 'Arial', sans-serif;
   }
   .flash{
-    background: green;
+    border: 5px green solid;
     animation: green 1s ease forwards;
   }
   .container {
@@ -92,26 +60,23 @@ fetch("http://192.168.1.252/glimpse", {
     align-items: center;
     margin-top: 4rem;
   }
-    button {
-    margin-left: auto !important;
-    padding: 1rem;
-    width: 100px;
-    font-family: 'Helvetica', 'Arial', sans-serif !important;
-    font-size: 16px;
-    font-weight: 900;
-    color: white;
-    border: none !important;
-    outline: none !important;
-    background: linear-gradient(270deg, rgba(17,184,237,1) 4%, rgba(11,231,55,1) 95%);
-  }
-  label {
-    margin-left: 3rem;
-    padding-right: 1rem;
-    font-weight: 900;
-    font-family: 'Helvetica', 'Arial', sans-serif !important;
-    font-size: 16;
-  }
-
+button {
+  margin-left: auto !important;
+  padding: 1rem;
+  width: 100px;
+  font-family: 'Helvetica', 'Arial', sans-serif !important;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  border: none !important;
+  outline: none !important;
+  background: linear-gradient(270deg, rgba(17,184,237,1) 4%, rgba(11,231,55,1) 95%);
+}
+label {
+  font-weight: 900;
+  font-family: 'Helvetica', 'Arial', sans-serif !important;
+  font-size: 16;
+}
 select {
   font-family: 'Helvetica', 'Arial', sans-serif !important;
   border: none !important;
@@ -120,21 +85,19 @@ select {
   width: 100%;
   height: 3rem;
 }
-
-
-  #my-form{
-    transition: all 5s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    border-radius: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    background: rgba(30,30,100,0.1);
-    padding: 4rem;
-    min-height: 80vh;
-    min-width: 40vw;
-  }
+#my-form {
+  transition: all 5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background: rgba(30,30,100,0.1);
+  padding: 4rem;
+  min-height: 80vh;
+  min-width: 40vw;
+}
   @keyframes green {
     from {
       border: green 5px solid;
@@ -153,189 +116,189 @@ select {
 
 <div class="container">
 <form id="my-form">
-  <label for="CBW 1"></label>
+  <label for="CBW 1"> CBW 1</label>
   <select name="CBW 1" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="CBW 2"></label>
+  <label for="CBW 2"> CBW 2</label>
   <select name="CBW 2" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="CBW 3"></label>
+  <label for="CBW 3"> CBW 3</label>
   <select name="CBW 3" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="CBW 1 Dryers"></label>
+  <label for="CBW 1 Dryers"> CBW 1 Dryers</label>
   <select name="CBW 1 Dryers" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="CBW 2 Dryers"></label>
+  <label for="CBW 2 Dryers"> CBW 2 Dryers</label>
   <select name="CBW 2 Dryers" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="CBW 3 Dryers"></label>
+  <label for="CBW 3 Dryers"> CBW 3 Dryers</label>
   <select name="CBW 3 Dryers" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Pharmagg 1"></label>
+  <label for="Pharmagg 1"> Pharmagg 1</label>
   <select name="Pharmagg 1" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Pharmagg 2"></label>
+  <label for="Pharmagg 2"> Pharmagg 2</label>
   <select name="Pharmagg 2" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Ironer 1"></label>
+  <label for="Ironer 1"> Ironer 1</label>
   <select name="Ironer 1" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Ironer 2"></label>
+  <label for="Ironer 2"> Ironer 2</label>
   <select name="Ironer 2" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Ironer 3"></label>
+  <label for="Ironer 3"> Ironer 3</label>
   <select name="Ironer 3" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Ironer 4"></label>
+  <label for="Ironer 4"> Ironer 4</label>
   <select name="Ironer 4" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Ironer 5"></label>
+  <label for="Ironer 5"> Ironer 5</label>
   <select name="Ironer 5" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Industrial Fax Folder"></label>
+  <label for="Industrial Fax Folder"> Industrial Fax Folder</label>
   <select name="Industrial Fax Folder" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Healthcare Fax Folder 1"></label>
+  <label for="Healthcare Fax Folder 1"> Healthcare Fax Folder 1</label>
   <select name="Healthcare Fax Folder 1" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Healthcare Fax Folder 2"></label>
+  <label for="Healthcare Fax Folder 2"> Healthcare Fax Folder 2</label>
   <select name="Healthcare Fax Folder 2" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Healthcare Fax Folder 3"></label>
+  <label for="Healthcare Fax Folder 3"> Healthcare Fax Folder 3</label>
   <select name="Healthcare Fax Folder 3" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Healthcare Steam Tunnel"></label>
+  <label for="Healthcare Steam Tunnel"> Healthcare Steam Tunnel</label>
   <select name="Healthcare Steam Tunnel" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Industrial Steam Tunnel"></label>
+  <label for="Industrial Steam Tunnel"> Industrial Steam Tunnel</label>
   <select name="Industrial Steam Tunnel" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Industrial Garment Hanging Stations"></label>
+  <label for="Industrial Garment Hanging Stations"> Industrial Garment Hanging Stations</label>
   <select name="Industrial Garment Hanging Stations" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Healthcare Garment Hanging Stations"></label>
+  <label for="Healthcare Garment Hanging Stations"> Healthcare Garment Hanging Stations</label>
   <select name="Healthcare Garment Hanging Stations" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Towel Folder 1"></label>
+  <label for="Towel Folder 1"> Towel Folder 1</label>
   <select name="Towel Folder 1" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Towel Folder 2"></label>
+  <label for="Towel Folder 2"> Towel Folder 2</label>
   <select name="Towel Folder 2" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Blanket Blaster"></label>
+  <label for="Blanket Blaster"> Blanket Blaster</label>
   <select name="Blanket Blaster" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Industrial Hoist"></label>
+  <label for="Industrial Hoist"> Industrial Hoist</label>
   <select name="Industrial Hoist" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Hoist"></label>
+  <label for="Hoist"> Hoist</label>
   <select name="Hoist" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
   <option value="pillow slips">pillow slips</option>
   </optgroup></select>
 
-  <label for="Dry Cleaning"></label>
+  <label for="Dry Cleaning"> Dry Cleaning</label>
   <select name="Dry Cleaning" placeholder=""><optgroup label="product">
   <option value="sheets">sheets</option>
   <option value="blankets">blankets</option>
