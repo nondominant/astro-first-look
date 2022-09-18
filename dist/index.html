@@ -3,61 +3,476 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="/assets/index.905ab0ea.css"><script type="module">let h=document.getElementById("dateselector");const y=new Date,r=new Date(y);r.setDate(r.getDate()+1);h.valueAsDate=r;let n=document.getElementById("my-form");n.attachEvent?n.attachEvent("submit",i):n.addEventListener("submit",i);function i(a){a.preventDefault&&a.preventDefault();const l=new FormData(a.target),d=[...l.keys()],c=[...l.values()];let e={id:Math.floor(1e3+Math.random()*8e3),department:"default"};for(let t=0;t<d.length;t++)e[d[t]]=c[t];let m={id:e.id,quote:e.description,source:"",author:e.namefield,year:e.dateselector,updateList:[],urgency:"low",startTime:e.starttime,endTime:e.endtime,equipment:e.Equipment,location:e.department,partsUsed:e.parts,materialsUsed:e.consumables,furtherAction:e.furtheraction};return fetch("http://192.168.1.252/server/new",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify(m)}).then(t=>{if(t.status!=500){console.log("response ",t),document.getElementById("my-form").reset();let f=document.getElementById("dateselector");const p=new Date,o=new Date(p);o.setDate(o.getDate()+1),f.valueAsDate=o;let s=document.querySelector("#my-form");s.classList.remove("flash");var u=confirm("Thanks! your submission was saved");s.classList.add("flash")}}),!1}
-</script></head><body class="astro-RJNBGWRA">
+  <link rel="stylesheet" href="/assets/index.9a5bd4ea.css"><script type="module">let h=document.getElementById("dateselector");const y=new Date,r=new Date(y);r.setDate(r.getDate()+1);h.valueAsDate=r;let n=document.getElementById("my-form");n.attachEvent?n.attachEvent("submit",i):n.addEventListener("submit",i);function i(a){a.preventDefault&&a.preventDefault();const l=new FormData(a.target),d=[...l.keys()],c=[...l.values()];let e={id:Math.floor(1e3+Math.random()*8e3),department:"default"};for(let t=0;t<d.length;t++)e[d[t]]=c[t];let m={id:e.id,quote:e.description,source:"",author:e.namefield,year:e.dateselector,updateList:[],urgency:"low",startTime:e.starttime,endTime:e.endtime,equipment:e.Equipment,location:e.department,partsUsed:e.parts,materialsUsed:e.consumables,furtherAction:e.furtheraction};return fetch("http://192.168.1.252/server/new",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify(m)}).then(t=>{if(t.status!=500){console.log("response ",t),document.getElementById("my-form").reset();let f=document.getElementById("dateselector");const p=new Date,o=new Date(p);o.setDate(o.getDate()+1),f.valueAsDate=o;let s=document.querySelector("#my-form");s.classList.remove("flash");var u=confirm("Thanks! your submission was saved");s.classList.add("flash")}}),!1}
+</script></head><body class="astro-N6KCCFMK">
     
 
 
 
-<div class="container astro-LCWLHT7S">
-<form id="my-form" class="astro-LCWLHT7S">
-  <div class="time astro-LCWLHT7S">
- <input type="date" id="dateselector" name="dateselector" value="2018-07-22" class="astro-LCWLHT7S">
-  <label for="starttime" class="astro-LCWLHT7S">Start Time:</label>
-<input type="time" id="starttime" name="starttime" min="04:00" max="22:00" required="" class="astro-LCWLHT7S">
-  <label for="endtime" class="astro-LCWLHT7S">End Time:</label>
-<input type="time" id="endtime" name="endtime" min="04:00" max="22:00" required="" class="astro-LCWLHT7S">
+<div class="container astro-RCNCRHVC">
+<form id="my-form" class="astro-RCNCRHVC">
+  <div class="time astro-RCNCRHVC">
+ <input type="date" id="dateselector" name="dateselector" value="2018-07-22" class="astro-RCNCRHVC">
+  <label for="starttime" class="astro-RCNCRHVC">Start Time:</label>
+<input type="time" id="starttime" name="starttime" min="04:00" max="22:00" required="" class="astro-RCNCRHVC">
+  <label for="endtime" class="astro-RCNCRHVC">End Time:</label>
+<input type="time" id="endtime" name="endtime" min="04:00" max="22:00" required="" class="astro-RCNCRHVC">
   </div>
-  <div class="date astro-LCWLHT7S">
-   <input id="namefield" type="text" name="namefield" placeholder="Name" required="" class="astro-LCWLHT7S">
+  <div class="date astro-RCNCRHVC">
+   <input id="namefield" type="text" name="namefield" placeholder="Name" required="" class="astro-RCNCRHVC">
   </div>
-<select name="Equipment" placeholder="Select Equipment" class="astro-LCWLHT7S">
-  <optgroup label="Equipment" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-LCWLHT7S">
-    &gt;
-  <option value="CBW 1" class="astro-LCWLHT7S">CBW 1</option>
-  <option value="CBW 2" class="astro-LCWLHT7S">CBW 2</option>
-  <option value="CBW 3" class="astro-LCWLHT7S">CBW 3</option>
-  <option value="CBW 1 Dryers" class="astro-LCWLHT7S">CBW 1 Dryers</option>
-  <option value="CBW 2 Dryers" class="astro-LCWLHT7S">CBW 2 Dryers</option>
-  <option value="CBW 3 Dryers" class="astro-LCWLHT7S">CBW 3 Dryers</option>
-  <option value="Pharmagg 1" class="astro-LCWLHT7S">Pharmagg 1</option>
-  <option value="Pharmagg 2" class="astro-LCWLHT7S">Pharmagg 2</option>
-  <option value="Ironer 1" class="astro-LCWLHT7S">Ironer 1</option>
-  <option value="Ironer 2" class="astro-LCWLHT7S">Ironer 2</option>
-  <option value="Ironer 3" class="astro-LCWLHT7S">Ironer 3</option>
-  <option value="Ironer 4" class="astro-LCWLHT7S">Ironer 4</option>
-  <option value="Ironer 5" class="astro-LCWLHT7S">Ironer 5</option>
-  <option value="Industrial Fax Folder" class="astro-LCWLHT7S">Industrial Fax Folder</option>
-  <option value="Healthcare Fax Folder 1" class="astro-LCWLHT7S">Healthcare Fax Folder 1</option>
-  <option value="Healthcare Fax Folder 2" class="astro-LCWLHT7S">Healthcare Fax Folder 2</option>
-  <option value="Healthcare Fax Folder 3" class="astro-LCWLHT7S">Healthcare Fax Folder 3</option>
-  <option value="Healthcare Steam Tunnel" class="astro-LCWLHT7S">Healthcare Steam Tunnel</option>
-  <option value="Industrial Steam Tunnel" class="astro-LCWLHT7S">Industrial Steam Tunnel</option>
-  <option value="Industrial Garment Hanging Stations" class="astro-LCWLHT7S">Industrial Garment Hanging Stations</option>
-  <option value="Healthcare Garment Hanging Stations" class="astro-LCWLHT7S">Healthcare Garment Hanging Stations</option>
-  <option value="Towel Folder 1" class="astro-LCWLHT7S">Towel Folder 1</option>
-  <option value="Towel Folder 2" class="astro-LCWLHT7S">Towel Folder 2</option>
-  <option value="Blanket Blaster" class="astro-LCWLHT7S">Blanket Blaster</option>
-  <option value="Industrial Hoist" class="astro-LCWLHT7S">Industrial Hoist</option>
-  <option value="Hoist" class="astro-LCWLHT7S">Hoist</option>
-  <option value="Dry Cleaning" class="astro-LCWLHT7S">Dry Cleaning</option>
-</optgroup>
+<select name="Equipment" placeholder="Select Equipment" class="astro-RCNCRHVC">
+  <optgroup label="Sorting" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Bag Remover	TAY-A-001" class="astro-RCNCRHVC">Bag Remover	TAY-A-001</option>
+    <option value="Bag Remover	TAY-A-002" class="astro-RCNCRHVC">Bag Remover	TAY-A-002</option>
+    <option value="Bag Chain Incline	TAY-A-003" class="astro-RCNCRHVC">Bag Chain Incline	TAY-A-003</option>
+    <option value="Bag Chain Incline	TAY-A-004" class="astro-RCNCRHVC">Bag Chain Incline	TAY-A-004</option>
+    <option value="Bag Chain Incline	TAY-A-005" class="astro-RCNCRHVC">Bag Chain Incline	TAY-A-005</option>
+    <option value="Bag Chain Incline	TAY-A-006" class="astro-RCNCRHVC">Bag Chain Incline	TAY-A-006</option>
+    <option value="Bag Remover	TAY-A-007" class="astro-RCNCRHVC">Bag Remover	TAY-A-007</option>
+    <option value="Bag Remover	TAY-A-008" class="astro-RCNCRHVC">Bag Remover	TAY-A-008</option>
+    <option value="Primary Incline Conveyor to Platform	TAY-A-009" class="astro-RCNCRHVC">Primary Incline Conveyor to Platform	TAY-A-009</option>
+    <option value="Sorting Conveyor	TAY-A-010" class="astro-RCNCRHVC">Sorting Conveyor	TAY-A-010</option>
+    <option value="Sorting Platrform	TAY-A-011" class="astro-RCNCRHVC">Sorting Platrform	TAY-A-011</option>
+    <option value="Sorting Carousel	TAY-A-012" class="astro-RCNCRHVC">Sorting Carousel	TAY-A-012</option>
+    <option value="Compound Controller	TAY-A-013" class="astro-RCNCRHVC">Compound Controller	TAY-A-013</option>
+    <option value="Classified Items Delivery Conveyor (Classified Items Delivery Conveyor (under platform)	TAY-A-014under platform)	TAY-A-014" class="astro-RCNCRHVC"></option>
+    <option value="Transport Conveyor to Bag Loading Unit	TAY-A-015" class="astro-RCNCRHVC">Transport Conveyor to Bag Loading Unit	TAY-A-015</option>
+    <option value="Bag Loading Unit	TAY-A-016" class="astro-RCNCRHVC">Bag Loading Unit	TAY-A-016</option>
+    <option value="Bag Hoist 1	TAY-A-017" class="astro-RCNCRHVC">Bag Hoist 1	TAY-A-017</option>
+    <option value="Storage Lane 1	TAY-A-018" class="astro-RCNCRHVC">Storage Lane 1	TAY-A-018</option>
+    <option value="Storage Lane 2	TAY-A-019" class="astro-RCNCRHVC">Storage Lane 2	TAY-A-019</option>
+    <option value="Storage Lane 3	TAY-A-020" class="astro-RCNCRHVC">Storage Lane 3	TAY-A-020</option>
+    <option value="Storage Lane 4	TAY-A-021" class="astro-RCNCRHVC">Storage Lane 4	TAY-A-021</option>
+    <option value="Storage Lane 5	TAY-A-022" class="astro-RCNCRHVC">Storage Lane 5	TAY-A-022</option>
+    <option value="Storage Lane 6	TAY-A-023" class="astro-RCNCRHVC">Storage Lane 6	TAY-A-023</option>
+    <option value="Storage Lane 7	TAY-A-024" class="astro-RCNCRHVC">Storage Lane 7	TAY-A-024</option>
+    <option value="Storage Lane 8	TAY-A-025" class="astro-RCNCRHVC">Storage Lane 8	TAY-A-025</option>
+    <option value="Storage Lane 9	TAY-A-026" class="astro-RCNCRHVC">Storage Lane 9	TAY-A-026</option>
+    <option value="Storage Lane 10	TAY-A-027" class="astro-RCNCRHVC">Storage Lane 10	TAY-A-027</option>
+    <option value="Storage Lane 11	TAY-A-028" class="astro-RCNCRHVC">Storage Lane 11	TAY-A-028</option>
+    <option value="Storage Lane 12	TAY-A-029" class="astro-RCNCRHVC">Storage Lane 12	TAY-A-029</option>
+    <option value="Storage Lane 13	TAY-A-030" class="astro-RCNCRHVC">Storage Lane 13	TAY-A-030</option>
+    <option value="Storage Lane 14	TAY-A-031" class="astro-RCNCRHVC">Storage Lane 14	TAY-A-031</option>
+    <option value="Bag Hoist 2	TAY-A-032" class="astro-RCNCRHVC">Bag Hoist 2	TAY-A-032</option>
+    <option value="Bag Hoist 4	TAY-A-033" class="astro-RCNCRHVC">Bag Hoist 4	TAY-A-033</option>
+    <option value="Bag Incline	TAY-A-034" class="astro-RCNCRHVC">Bag Incline	TAY-A-034</option>
+    <option value="Bag Hoist 5	TAY-A-035" class="astro-RCNCRHVC">Bag Hoist 5	TAY-A-035</option>
+    <option value="Bag Incline	TAY-A-036" class="astro-RCNCRHVC">Bag Incline	TAY-A-036</option>
+    <option value="Discharger 1	TAY-A-037" class="astro-RCNCRHVC">Discharger 1	TAY-A-037</option>
+    <option value="Discharger 2	TAY-A-038" class="astro-RCNCRHVC">Discharger 2	TAY-A-038</option>
+    <option value="Discharger 3	TAY-A-039" class="astro-RCNCRHVC">Discharger 3	TAY-A-039</option>
+    <option value="Discharger 4	TAY-A-040" class="astro-RCNCRHVC">Discharger 4	TAY-A-040</option>
+    <option value="Discharger 5	TAY-A-041" class="astro-RCNCRHVC">Discharger 5	TAY-A-041</option>
+    <option value="Bag Closer	TAY-A-042" class="astro-RCNCRHVC">Bag Closer	TAY-A-042</option>
+    <option value="Bag Hoist 3	TAY-A-043" class="astro-RCNCRHVC">Bag Hoist 3	TAY-A-043</option>
+    <option value="Bag Stacker (Bag Stacker (Ongoing)	TAY-A-044Ongoing)	TAY-A-044" class="astro-RCNCRHVC"></option>
+    <option value="Bag Stacker (Bag Stacker (Offgoing)	TAY-A-045Offgoing)	TAY-A-045" class="astro-RCNCRHVC"></option>
+    <option value="Classified Bags Soiled (Classified Bags Soiled (Blue)	TAY-A-046Blue)	TAY-A-046" class="astro-RCNCRHVC"></option>
+    <option value="Terminal 1	TAY-A-047" class="astro-RCNCRHVC">Terminal 1	TAY-A-047</option>
+    <option value="Terminal 2 (Terminal 2 (Industrial Sorting)	TAY-A-048Industrial Sorting)	TAY-A-048" class="astro-RCNCRHVC"></option>
+    <option value="CBW #3 Step Conveyor	TAY-A-049" class="astro-RCNCRHVC">CBW #3 Step Conveyor	TAY-A-049</option>
+  </optgroup>
+
+  <optgroup label="Washroom" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Washer Extractor	TAY-B-001" class="astro-RCNCRHVC">Washer Extractor	TAY-B-001</option>
+    <option value="Washer Extractor	TAY-B-002" class="astro-RCNCRHVC">Washer Extractor	TAY-B-002</option>
+    <option value="Cycle Dryer with Snorkel	TAY-B-003" class="astro-RCNCRHVC">Cycle Dryer with Snorkel	TAY-B-003</option>
+    <option value="Washer Extractor	TAY-B-004" class="astro-RCNCRHVC">Washer Extractor	TAY-B-004</option>
+    <option value="Dryer	TAY-B-005" class="astro-RCNCRHVC">Dryer	TAY-B-005</option>
+    <option value="Continuous Batch Washer #1	TAY-B-006" class="astro-RCNCRHVC">Continuous Batch Washer #1	TAY-B-006</option>
+    <option value="Water Extraction Press	TAY-B-007" class="astro-RCNCRHVC">Water Extraction Press	TAY-B-007</option>
+    <option value="Lift Shuttle	TAY-B-008" class="astro-RCNCRHVC">Lift Shuttle	TAY-B-008</option>
+    <option value="Batch Dryer	TAY-B-009" class="astro-RCNCRHVC">Batch Dryer	TAY-B-009</option>
+    <option value="Batch Dryer	TAY-B-010" class="astro-RCNCRHVC">Batch Dryer	TAY-B-010</option>
+    <option value="Batch Dryer	TAY-B-011" class="astro-RCNCRHVC">Batch Dryer	TAY-B-011</option>
+    <option value="Batch Dryer	TAY-B-012" class="astro-RCNCRHVC">Batch Dryer	TAY-B-012</option>
+    <option value="Batch Dryer	TAY-B-013" class="astro-RCNCRHVC">Batch Dryer	TAY-B-013</option>
+    <option value="Compound Controller	TAY-B-014" class="astro-RCNCRHVC">Compound Controller	TAY-B-014</option>
+    <option value="Lint Collection Box	TAY-B-015" class="astro-RCNCRHVC">Lint Collection Box	TAY-B-015</option>
+    <option value="Dryer Discharge Conveyor	TAY-B-016" class="astro-RCNCRHVC">Dryer Discharge Conveyor	TAY-B-016</option>
+    <option value="Dryer Discharge Conveyor	TAY-B-017" class="astro-RCNCRHVC">Dryer Discharge Conveyor	TAY-B-017</option>
+    <option value="Bypass Conveyor	TAY-B-018" class="astro-RCNCRHVC">Bypass Conveyor	TAY-B-018</option>
+    <option value="Continuous Batch Washer #2	TAY-B-019" class="astro-RCNCRHVC">Continuous Batch Washer #2	TAY-B-019</option>
+    <option value="Water Extraction Press	TAY-B-020" class="astro-RCNCRHVC">Water Extraction Press	TAY-B-020</option>
+    <option value="Lift Shuttle	TAY-B-021" class="astro-RCNCRHVC">Lift Shuttle	TAY-B-021</option>
+    <option value="Batch Dryer	TAY-B-022" class="astro-RCNCRHVC">Batch Dryer	TAY-B-022</option>
+    <option value="Batch Dryer	TAY-B-023" class="astro-RCNCRHVC">Batch Dryer	TAY-B-023</option>
+    <option value="Batch Dryer	TAY-B-024" class="astro-RCNCRHVC">Batch Dryer	TAY-B-024</option>
+    <option value="Batch Dryer	TAY-B-025" class="astro-RCNCRHVC">Batch Dryer	TAY-B-025</option>
+    <option value="Batch Dryer	TAY-B-026" class="astro-RCNCRHVC">Batch Dryer	TAY-B-026</option>
+    <option value="Compound Controller	TAY-B-027" class="astro-RCNCRHVC">Compound Controller	TAY-B-027</option>
+    <option value="Lint Collection Box	TAY-B-028" class="astro-RCNCRHVC">Lint Collection Box	TAY-B-028</option>
+    <option value="Dryer Discharge Conveyor	TAY-B-029" class="astro-RCNCRHVC">Dryer Discharge Conveyor	TAY-B-029</option>
+    <option value="Bypass Conveyor	TAY-B-030" class="astro-RCNCRHVC">Bypass Conveyor	TAY-B-030</option>
+    <option value="Bypass Conveyor	TAY-B-031" class="astro-RCNCRHVC">Bypass Conveyor	TAY-B-031</option>
+    <option value="Continuous Batch Washer #3	TAY-B-032" class="astro-RCNCRHVC">Continuous Batch Washer #3	TAY-B-032</option>
+    <option value="High Performance Centrifuge	TAY-B-033" class="astro-RCNCRHVC">High Performance Centrifuge	TAY-B-033</option>
+    <option value="Powerspin Unload Conveyor 01	TAY-B-034" class="astro-RCNCRHVC">Powerspin Unload Conveyor 01	TAY-B-034</option>
+    <option value="Powerspin Unload Conveyor 02	TAY-B-035" class="astro-RCNCRHVC">Powerspin Unload Conveyor 02	TAY-B-035</option>
+    <option value="Bypass Conveyor	TAY-B-036" class="astro-RCNCRHVC">Bypass Conveyor	TAY-B-036</option>
+    <option value="Lift Shuttle	TAY-B-037" class="astro-RCNCRHVC">Lift Shuttle	TAY-B-037</option>
+    <option value="Batch Dryer	TAY-B-038" class="astro-RCNCRHVC">Batch Dryer	TAY-B-038</option>
+    <option value="Batch Dryer	TAY-B-039" class="astro-RCNCRHVC">Batch Dryer	TAY-B-039</option>
+    <option value="Batch Dryer	TAY-B-040" class="astro-RCNCRHVC">Batch Dryer	TAY-B-040</option>
+    <option value="Batch Dryer	TAY-B-041" class="astro-RCNCRHVC">Batch Dryer	TAY-B-041</option>
+    <option value="Compound Controller	TAY-B-042" class="astro-RCNCRHVC">Compound Controller	TAY-B-042</option>
+    <option value="Lint Collection Box	TAY-B-043" class="astro-RCNCRHVC">Lint Collection Box	TAY-B-043</option>
+    <option value="Dryer Discharge Conveyor K01	TAY-B-044" class="astro-RCNCRHVC">Dryer Discharge Conveyor K01	TAY-B-044</option>
+    <option value="Dryer Discharge Conveyor Extention K02	TAY-B-045" class="astro-RCNCRHVC">Dryer Discharge Conveyor Extention K02	TAY-B-045</option>
+  </optgroup>
+
+  <optgroup label="AllTrack" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Transport Conveyor from CBW	TAY-C-001" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-001</option>
+    <option value="Transport Conveyor from CBW	TAY-C-002" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-002</option>
+    <option value="Transport Conveyor from CBW	TAY-C-003" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-003</option>
+    <option value="Transport Conveyor from CBW	TAY-C-004" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-004</option>
+    <option value="Transport Conveyor from CBW	TAY-C-005" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-005</option>
+    <option value="Transport Conveyor from CBW	TAY-C-006" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-006</option>
+    <option value="Transport Conveyor from CBW	TAY-C-007" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-007</option>
+    <option value="Transport Conveyor from CBW	TAY-C-008" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-008</option>
+    <option value="Transport Conveyor from CBW	TAY-C-009" class="astro-RCNCRHVC">Transport Conveyor from CBW	TAY-C-009</option>
+    <option value="Loading Hoist 1	TAY-C-010" class="astro-RCNCRHVC">Loading Hoist 1	TAY-C-010</option>
+    <option value="Loading Hoist 2	TAY-C-011" class="astro-RCNCRHVC">Loading Hoist 2	TAY-C-011</option>
+    <option value="Air Hoist 1	TAY-C-012" class="astro-RCNCRHVC">Air Hoist 1	TAY-C-012</option>
+    <option value="Air Hoist 2	TAY-C-013" class="astro-RCNCRHVC">Air Hoist 2	TAY-C-013</option>
+    <option value="Air Hoist 3	TAY-C-014" class="astro-RCNCRHVC">Air Hoist 3	TAY-C-014</option>
+    <option value="Air Hoist 4	TAY-C-015" class="astro-RCNCRHVC">Air Hoist 4	TAY-C-015</option>
+    <option value="Air Hoist 5	TAY-C-016" class="astro-RCNCRHVC">Air Hoist 5	TAY-C-016</option>
+    <option value="Air Hoist 6	TAY-C-017" class="astro-RCNCRHVC">Air Hoist 6	TAY-C-017</option>
+    <option value="Lane 1	TAY-C-018" class="astro-RCNCRHVC">Lane 1	TAY-C-018</option>
+    <option value="Lane 2	TAY-C-019" class="astro-RCNCRHVC">Lane 2	TAY-C-019</option>
+    <option value="Lane 3	TAY-C-020" class="astro-RCNCRHVC">Lane 3	TAY-C-020</option>
+    <option value="Lane 4	TAY-C-021" class="astro-RCNCRHVC">Lane 4	TAY-C-021</option>
+    <option value="Lane 5	TAY-C-022" class="astro-RCNCRHVC">Lane 5	TAY-C-022</option>
+    <option value="Lane 6	TAY-C-023" class="astro-RCNCRHVC">Lane 6	TAY-C-023</option>
+    <option value="Lane 7	TAY-C-024" class="astro-RCNCRHVC">Lane 7	TAY-C-024</option>
+    <option value="Lane 8	TAY-C-025" class="astro-RCNCRHVC">Lane 8	TAY-C-025</option>
+    <option value="Lane 9	TAY-C-026" class="astro-RCNCRHVC">Lane 9	TAY-C-026</option>
+    <option value="Lane 10	TAY-C-027" class="astro-RCNCRHVC">Lane 10	TAY-C-027</option>
+    <option value="Lane 11	TAY-C-028" class="astro-RCNCRHVC">Lane 11	TAY-C-028</option>
+    <option value="Lane 12	TAY-C-029" class="astro-RCNCRHVC">Lane 12	TAY-C-029</option>
+    <option value="Lane 13	TAY-C-030" class="astro-RCNCRHVC">Lane 13	TAY-C-030</option>
+    <option value="Discharger 1	TAY-C-031" class="astro-RCNCRHVC">Discharger 1	TAY-C-031</option>
+    <option value="Discharger 2	TAY-C-032" class="astro-RCNCRHVC">Discharger 2	TAY-C-032</option>
+    <option value="Junction Boxes 1- 10	TAY-C-033" class="astro-RCNCRHVC">Junction Boxes 1- 10	TAY-C-033</option>
+    <option value="Empty Bag Stack	TAY-C-034" class="astro-RCNCRHVC">Empty Bag Stack	TAY-C-034</option>
+    <option value="Clean Bag (Clean Bag (White)	TAY-C-035White)	TAY-C-035" class="astro-RCNCRHVC"></option>
+    <option value="Compound Controller	TAY-C-036" class="astro-RCNCRHVC">Compound Controller	TAY-C-036</option>
+  </optgroup>
+
+  <optgroup label="SuperTrack 1" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Loading Hoist 1	TAY-D-001" class="astro-RCNCRHVC">Loading Hoist 1	TAY-D-001</option>
+    <option value="Bag Hoist 1	TAY-D-002" class="astro-RCNCRHVC">Bag Hoist 1	TAY-D-002</option>
+    <option value="Storage Lane 1	TAY-D-003" class="astro-RCNCRHVC">Storage Lane 1	TAY-D-003</option>
+    <option value="Storage Lane 2	TAY-D-004" class="astro-RCNCRHVC">Storage Lane 2	TAY-D-004</option>
+    <option value="Storage Lane 3	TAY-D-005" class="astro-RCNCRHVC">Storage Lane 3	TAY-D-005</option>
+    <option value="Discharger 1	TAY-D-006" class="astro-RCNCRHVC">Discharger 1	TAY-D-006</option>
+    <option value="Discharger 2	TAY-D-007" class="astro-RCNCRHVC">Discharger 2	TAY-D-007</option>
+    <option value="Discharger 3	TAY-D-008" class="astro-RCNCRHVC">Discharger 3	TAY-D-008</option>
+    <option value="Bag Incline 1	TAY-D-009" class="astro-RCNCRHVC">Bag Incline 1	TAY-D-009</option>
+    <option value="Clean Bag(Clean Bag(s)	TAY-D-010s)	TAY-D-010" class="astro-RCNCRHVC"></option>
+    <option value="Compound Controller	TAY-D-011" class="astro-RCNCRHVC">Compound Controller	TAY-D-011</option>
+  </optgroup>
+
+  <optgroup label="Aero" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Aero Loader	TAY-E-001" class="astro-RCNCRHVC">Aero Loader	TAY-E-001</option>
+    <option value="Accumulation Box	TAY-E-002" class="astro-RCNCRHVC">Accumulation Box	TAY-E-002</option>
+    <option value="Lint Collection Box	TAY-E-003" class="astro-RCNCRHVC">Lint Collection Box	TAY-E-003</option>
+    <option value="Compound Controller	TAY-E-004" class="astro-RCNCRHVC">Compound Controller	TAY-E-004</option>
+    <option value="Transport Conveyor	TAY-E-005" class="astro-RCNCRHVC">Transport Conveyor	TAY-E-005</option>
+    <option value="Transport Conveyor	TAY-E-006" class="astro-RCNCRHVC">Transport Conveyor	TAY-E-006</option>
+    <option value="Transport Conveyor	TAY-E-007" class="astro-RCNCRHVC">Transport Conveyor	TAY-E-007</option>
+    <option value="Compound Controller	TAY-E-008" class="astro-RCNCRHVC">Compound Controller	TAY-E-008</option>
+  </optgroup>
+
+  <optgroup label="Private Wash" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Dryer	TAY-F-009" class="astro-RCNCRHVC">Dryer	TAY-F-009</option>
+    <option value="Dryer	TAY-F-010" class="astro-RCNCRHVC">Dryer	TAY-F-010</option>
+    <option value="Dryer 32kg	TAY-F-011" class="astro-RCNCRHVC">Dryer 32kg	TAY-F-011</option>
+    <option value="Washer Extractor 50kg	TAY-F-012" class="astro-RCNCRHVC">Washer Extractor 50kg	TAY-F-012</option>
+    <option value="Washer Extractor 50kg	TAY-F-013" class="astro-RCNCRHVC">Washer Extractor 50kg	TAY-F-013</option>
+    <option value="Washer Extractor 50kg	TAY-F-014" class="astro-RCNCRHVC">Washer Extractor 50kg	TAY-F-014</option>
+    <option value="Washer Extractor 30kg	TAY-F-015" class="astro-RCNCRHVC">Washer Extractor 30kg	TAY-F-015</option>
+    <option value="Washer Extractor 23kg	TAY-F-016" class="astro-RCNCRHVC">Washer Extractor 23kg	TAY-F-016</option>
+    <option value="Washer Extractor 23kg	TAY-F-017" class="astro-RCNCRHVC">Washer Extractor 23kg	TAY-F-017</option>
+    <option value="Washer Extractor 23kg	TAY-F-018" class="astro-RCNCRHVC">Washer Extractor 23kg	TAY-F-018</option>
+    <option value="Dryer	TAY-F-019" class="astro-RCNCRHVC">Dryer	TAY-F-019</option>
+    <option value="Dryer	TAY-F-020" class="astro-RCNCRHVC">Dryer	TAY-F-020</option>
+    <option value="Dryer	TAY-F-021" class="astro-RCNCRHVC">Dryer	TAY-F-021</option>
+    <option value="Dryer	TAY-F-022" class="astro-RCNCRHVC">Dryer	TAY-F-022</option>
+    <option value="Dryer	TAY-F-023" class="astro-RCNCRHVC">Dryer	TAY-F-023</option>
+  </optgroup>
+
+  <optgroup label="Airline" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Automatic Folder	TAY-G-001" class="astro-RCNCRHVC">Automatic Folder	TAY-G-001</option>
+    <option value="Automatic Folder	TAY-G-002" class="astro-RCNCRHVC">Automatic Folder	TAY-G-002</option>
+    <option value="Automatic Sealing Machine	TAY-G-003" class="astro-RCNCRHVC">Automatic Sealing Machine	TAY-G-003</option>
+    <option value="Feeder	TAY-G-004" class="astro-RCNCRHVC">Feeder	TAY-G-004</option>
+    <option value="Ironer	TAY-G-005" class="astro-RCNCRHVC">Ironer	TAY-G-005</option>
+    <option value="Folder	TAY-G-006" class="astro-RCNCRHVC">Folder	TAY-G-006</option>
+  </optgroup>
+
+
+  <optgroup label="Finishing" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Picker	TAY-H-001" class="astro-RCNCRHVC">Picker	TAY-H-001</option>
+    <option value="Transport Conveyor	TAY-H-002" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-002</option>
+    <option value="Transport Conveyor	TAY-H-003" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-003</option>
+    <option value="Transport Conveyor	TAY-H-004" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-004</option>
+    <option value="Feeding Machine with Supply System	TAY-H-005" class="astro-RCNCRHVC">Feeding Machine with Supply System	TAY-H-005</option>
+    <option value="Ironer	TAY-H-006" class="astro-RCNCRHVC">Ironer	TAY-H-006</option>
+    <option value="Combination Folding Machine	TAY-H-007" class="astro-RCNCRHVC">Combination Folding Machine	TAY-H-007</option>
+    <option value="Cake / Batch Separator	TAY-H-008" class="astro-RCNCRHVC">Cake / Batch Separator	TAY-H-008</option>
+    <option value="Picker	TAY-H-009" class="astro-RCNCRHVC">Picker	TAY-H-009</option>
+    <option value="Transport Conveyor	TAY-H-010" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-010</option>
+    <option value="Transport Conveyor	TAY-H-011" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-011</option>
+    <option value="Transport Conveyor	TAY-H-012" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-012</option>
+    <option value="Transport Conveyor	TAY-H-013" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-013</option>
+    <option value="Feeding Machine with Supply System	TAY-H-014" class="astro-RCNCRHVC">Feeding Machine with Supply System	TAY-H-014</option>
+    <option value="Ironer	TAY-H-015" class="astro-RCNCRHVC">Ironer	TAY-H-015</option>
+    <option value="Combination Folding Machine	TAY-H-016" class="astro-RCNCRHVC">Combination Folding Machine	TAY-H-016</option>
+    <option value="Cake / Batch Separator	TAY-H-017" class="astro-RCNCRHVC">Cake / Batch Separator	TAY-H-017</option>
+    <option value="Picker	TAY-H-018" class="astro-RCNCRHVC">Picker	TAY-H-018</option>
+    <option value="Transport Conveyor	TAY-H-019" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-019</option>
+    <option value="Transport Conveyor	TAY-H-020" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-020</option>
+    <option value="Transport Conveyor	TAY-H-021" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-021</option>
+    <option value="Feeder	TAY-H-022" class="astro-RCNCRHVC">Feeder	TAY-H-022</option>
+    <option value="Ironer	TAY-H-023" class="astro-RCNCRHVC">Ironer	TAY-H-023</option>
+    <option value="Folder	TAY-H-024" class="astro-RCNCRHVC">Folder	TAY-H-024</option>
+    <option value="Stacker	TAY-H-025" class="astro-RCNCRHVC">Stacker	TAY-H-025</option>
+    <option value="Ironer	TAY-H-026" class="astro-RCNCRHVC">Ironer	TAY-H-026</option>
+    <option value="Folder	TAY-H-027" class="astro-RCNCRHVC">Folder	TAY-H-027</option>
+    <option value="Transport Conveyor for delivery to Ironer #5	TAY-H-028" class="astro-RCNCRHVC">Transport Conveyor for delivery to Ironer #5	TAY-H-028</option>
+    <option value="Transport Conveyor for delivery to Ironer #5	TAY-H-029" class="astro-RCNCRHVC">Transport Conveyor for delivery to Ironer #5	TAY-H-029</option>
+    <option value="Cake / Batch Separator	TAY-H-030" class="astro-RCNCRHVC">Cake / Batch Separator	TAY-H-030</option>
+    <option value="Ironer #5 Transport Conveyor	TAY-H-031" class="astro-RCNCRHVC">Ironer #5 Transport Conveyor	TAY-H-031</option>
+    <option value="Ironer #5 Transport Conveyor	TAY-H-032" class="astro-RCNCRHVC">Ironer #5 Transport Conveyor	TAY-H-032</option>
+    <option value="Ironer #5 Transport Conveyor	TAY-H-033" class="astro-RCNCRHVC">Ironer #5 Transport Conveyor	TAY-H-033</option>
+    <option value="Feeder	TAY-H-034" class="astro-RCNCRHVC">Feeder	TAY-H-034</option>
+    <option value="Ironer	TAY-H-035" class="astro-RCNCRHVC">Ironer	TAY-H-035</option>
+    <option value="Longitudinal Folding Machine with Stacker	TAY-H-036" class="astro-RCNCRHVC">Longitudinal Folding Machine with Stacker	TAY-H-036</option>
+    <option value="Transport Conveyor behind Ironer(Transport Conveyor behind Ironer(s) 4 &amp; 5	TAY-H-037s) 4 &amp; 5	TAY-H-037" class="astro-RCNCRHVC"></option>
+    <option value="Transport Conveyor w/ Drop Point	TAY-H-038" class="astro-RCNCRHVC">Transport Conveyor w/ Drop Point	TAY-H-038</option>
+    <option value="Transport Conveyor	TAY-H-039" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-039</option>
+    <option value="Transport Conveyor	TAY-H-040" class="astro-RCNCRHVC">Transport Conveyor	TAY-H-040</option>
+    <option value="Incline Conveyor with Drop Point for SPF #1&amp;2	TAY-H-041" class="astro-RCNCRHVC">Incline Conveyor with Drop Point for SPF #1&amp;2	TAY-H-041</option>
+    <option value="Incline Conveyor with Drop Point for SPF #3&amp;4	TAY-H-042" class="astro-RCNCRHVC">Incline Conveyor with Drop Point for SPF #3&amp;4	TAY-H-042</option>
+    <option value="Compound Controller	TAY-H-043" class="astro-RCNCRHVC">Compound Controller	TAY-H-043</option>
+    <option value="Compound Controller	TAY-H-044" class="astro-RCNCRHVC">Compound Controller	TAY-H-044</option>
+    <option value="Compound Controller	TAY-H-045" class="astro-RCNCRHVC">Compound Controller	TAY-H-045</option>
+    <option value="Dry Laundry Folder	TAY-H-046" class="astro-RCNCRHVC">Dry Laundry Folder	TAY-H-046</option>
+    <option value="Dry Laundry Folder	TAY-H-047" class="astro-RCNCRHVC">Dry Laundry Folder	TAY-H-047</option>
+    <option value="Dry Laundry Folder	TAY-H-048" class="astro-RCNCRHVC">Dry Laundry Folder	TAY-H-048</option>
+    <option value="Dry Laundry Folder	TAY-H-049" class="astro-RCNCRHVC">Dry Laundry Folder	TAY-H-049</option>
+  </optgroup>
+
+  <optgroup label="Vectura Top" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Storage Relocator	TAY-I-001" class="astro-RCNCRHVC">Storage Relocator	TAY-I-001</option>
+    <option value="Storage Relocator	TAY-I-002" class="astro-RCNCRHVC">Storage Relocator	TAY-I-002</option>
+    <option value="Transport Conveyor	TAY-I-003" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-003</option>
+    <option value="Transport Conveyor	TAY-I-004" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-004</option>
+    <option value="Transport Conveyor	TAY-I-005" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-005</option>
+    <option value="90° Transport Conveyor	TAY-I-006" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-I-006</option>
+    <option value="Transport Conveyor	TAY-I-007" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-007</option>
+    <option value="90° Transport Conveyor	TAY-I-008" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-I-008</option>
+    <option value="Transport Conveyor	TAY-I-009" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-009</option>
+    <option value="Transport Conveyor	TAY-I-010" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-010</option>
+    <option value="Transport Conveyor	TAY-I-011" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-011</option>
+    <option value="90° Transport Conveyor	TAY-I-012" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-I-012</option>
+    <option value="Transport Conveyor	TAY-I-013" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-013</option>
+    <option value="Transport Conveyor	TAY-I-014" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-014</option>
+    <option value="Transport Conveyor	TAY-I-015" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-015</option>
+    <option value="Transport Conveyor	TAY-I-016" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-016</option>
+    <option value="90° Transport Conveyor	TAY-I-017" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-I-017</option>
+    <option value="Transport Conveyor	TAY-I-018" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-018</option>
+    <option value="Double Stack Support	TAY-I-019" class="astro-RCNCRHVC">Double Stack Support	TAY-I-019</option>
+    <option value="90° Transport Conveyor	TAY-I-020" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-I-020</option>
+    <option value="Transport Conveyor	TAY-I-021" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-021</option>
+    <option value="Transport Conveyor	TAY-I-022" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-022</option>
+    <option value="Transport Conveyor	TAY-I-023" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-023</option>
+    <option value="Transport Conveyor	TAY-I-024" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-024</option>
+    <option value="Transport Conveyor	TAY-I-025" class="astro-RCNCRHVC">Transport Conveyor	TAY-I-025</option>
+    <option value="Sorting Pusher	TAY-I-026" class="astro-RCNCRHVC">Sorting Pusher	TAY-I-026</option>
+    <option value="Sorting Pusher	TAY-I-027" class="astro-RCNCRHVC">Sorting Pusher	TAY-I-027</option>
+    <option value="Roller Conveyor	TAY-I-028" class="astro-RCNCRHVC">Roller Conveyor	TAY-I-028</option>
+    <option value="Roller Conveyor	TAY-I-029" class="astro-RCNCRHVC">Roller Conveyor	TAY-I-029</option>
+    <option value="Roller Conveyor	TAY-I-030" class="astro-RCNCRHVC">Roller Conveyor	TAY-I-030</option>
+    <option value="Roller Conveyor	TAY-I-031" class="astro-RCNCRHVC">Roller Conveyor	TAY-I-031</option>
+    <option value="Roller Conveyor	TAY-I-032" class="astro-RCNCRHVC">Roller Conveyor	TAY-I-032</option>
+    <option value="Terminal	TAY-I-033" class="astro-RCNCRHVC">Terminal	TAY-I-033</option>
+    <option value="Terminal	TAY-I-034" class="astro-RCNCRHVC">Terminal	TAY-I-034</option>
+    <option value="Double Stack Support	TAY-I-035" class="astro-RCNCRHVC">Double Stack Support	TAY-I-035</option>
+    <option value="Compound Controller	TAY-I-036" class="astro-RCNCRHVC">Compound Controller	TAY-I-036</option>
+  </optgroup>
+
+
+  <optgroup label="Vectura Bottom" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Storage Relocator	TAY-J-001" class="astro-RCNCRHVC">Storage Relocator	TAY-J-001</option>
+    <option value="Storage Relocator	TAY-J-002" class="astro-RCNCRHVC">Storage Relocator	TAY-J-002</option>
+    <option value="Storage Relocator	TAY-J-003" class="astro-RCNCRHVC">Storage Relocator	TAY-J-003</option>
+    <option value="Storage Relocator	TAY-J-004" class="astro-RCNCRHVC">Storage Relocator	TAY-J-004</option>
+    <option value="Storage Relocator	TAY-J-005" class="astro-RCNCRHVC">Storage Relocator	TAY-J-005</option>
+    <option value="Storage Relocator	TAY-J-006" class="astro-RCNCRHVC">Storage Relocator	TAY-J-006</option>
+    <option value="Storage Relocator	TAY-J-007" class="astro-RCNCRHVC">Storage Relocator	TAY-J-007</option>
+    <option value="Storage Relocator	TAY-J-008" class="astro-RCNCRHVC">Storage Relocator	TAY-J-008</option>
+    <option value="Storage Relocator	TAY-J-009" class="astro-RCNCRHVC">Storage Relocator	TAY-J-009</option>
+    <option value="Transport Conveyor	TAY-J-010" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-010</option>
+    <option value="Transport Conveyor	TAY-J-011" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-011</option>
+    <option value="Transport Conveyor	TAY-J-012" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-012</option>
+    <option value="Transport Conveyor	TAY-J-013" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-013</option>
+    <option value="Transport Conveyor	TAY-J-014" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-014</option>
+    <option value="Transport Conveyor	TAY-J-015" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-015</option>
+    <option value="Transport Conveyor	TAY-J-016" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-016</option>
+    <option value="Transport Conveyor	TAY-J-017" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-017</option>
+    <option value="Transport Conveyor	TAY-J-018" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-018</option>
+    <option value="Transport Conveyor	TAY-J-019" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-019</option>
+    <option value="Transport Conveyor	TAY-J-020" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-020</option>
+    <option value="Transport Conveyor	TAY-J-021" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-021</option>
+    <option value="Transport Conveyor	TAY-J-022" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-022</option>
+    <option value="Transport Conveyor	TAY-J-023" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-023</option>
+    <option value="90° Transport Conveyor	TAY-J-024" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-J-024</option>
+    <option value="Transport Conveyor	TAY-J-025" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-025</option>
+    <option value="Transport Conveyor	TAY-J-026" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-026</option>
+    <option value="Transport Conveyor	TAY-J-027" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-027</option>
+    <option value="90° Transport Conveyor	TAY-J-028" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-J-028</option>
+    <option value="90° Transport Conveyor	TAY-J-029" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-J-029</option>
+    <option value="Transport Conveyor	TAY-J-030" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-030</option>
+    <option value="90° Transport Conveyor	TAY-J-031" class="astro-RCNCRHVC">90° Transport Conveyor	TAY-J-031</option>
+    <option value="Transport Conveyor	TAY-J-032" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-032</option>
+    <option value="Transport Conveyor	TAY-J-033" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-033</option>
+    <option value="Transport Conveyor	TAY-J-034" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-034</option>
+    <option value="Transport Conveyor	TAY-J-035" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-035</option>
+    <option value="Transport Conveyor	TAY-J-036" class="astro-RCNCRHVC">Transport Conveyor	TAY-J-036</option>
+    <option value="Sorting Pusher	TAY-J-037" class="astro-RCNCRHVC">Sorting Pusher	TAY-J-037</option>
+    <option value="Sorting Pusher	TAY-J-038" class="astro-RCNCRHVC">Sorting Pusher	TAY-J-038</option>
+    <option value="Roller Conveyor	TAY-J-039" class="astro-RCNCRHVC">Roller Conveyor	TAY-J-039</option>
+    <option value="Roller Conveyor	TAY-J-040" class="astro-RCNCRHVC">Roller Conveyor	TAY-J-040</option>
+    <option value="Roller Conveyor	TAY-J-041" class="astro-RCNCRHVC">Roller Conveyor	TAY-J-041</option>
+    <option value="Roller Conveyor	TAY-J-042" class="astro-RCNCRHVC">Roller Conveyor	TAY-J-042</option>
+    <option value="Roller Conveyor	TAY-J-043" class="astro-RCNCRHVC">Roller Conveyor	TAY-J-043</option>
+    <option value="Terminal	TAY-J-044" class="astro-RCNCRHVC">Terminal	TAY-J-044</option>
+    <option value="Terminal	TAY-J-045" class="astro-RCNCRHVC">Terminal	TAY-J-045</option>
+    <option value="Compound Controller	TAY-J-046" class="astro-RCNCRHVC">Compound Controller	TAY-J-046</option>
+  </optgroup>
+
+  <optgroup label="Rough Dry" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Transport Conveyor	TAY-K-001" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-001</option>
+    <option value="Transport Conveyor	TAY-K-002" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-002</option>
+    <option value="Transport Conveyor	TAY-K-003" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-003</option>
+    <option value="Transport Conveyor	TAY-K-004" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-004</option>
+    <option value="Transport Conveyor	TAY-K-005" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-005</option>
+    <option value="Transport Conveyor	TAY-K-006" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-006</option>
+    <option value="Transport Conveyor	TAY-K-007" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-007</option>
+    <option value="Transport Conveyor	TAY-K-008" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-008</option>
+    <option value="Transport Conveyor	TAY-K-009" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-009</option>
+    <option value="Transport Conveyor	TAY-K-010" class="astro-RCNCRHVC">Transport Conveyor	TAY-K-010</option>
+    <option value="Compound Controller	TAY-K-011" class="astro-RCNCRHVC">Compound Controller	TAY-K-011</option>
+    <option value="Healthcare Garment Feed Station 1	TAY-K-012" class="astro-RCNCRHVC">Healthcare Garment Feed Station 1	TAY-K-012</option>
+    <option value="Healthcare Garment Feed Station 2	TAY-K-013" class="astro-RCNCRHVC">Healthcare Garment Feed Station 2	TAY-K-013</option>
+    <option value="Healthcare Garment Feed Station 3	TAY-K-014" class="astro-RCNCRHVC">Healthcare Garment Feed Station 3	TAY-K-014</option>
+    <option value="Healthcare Garment Feed Station 4	TAY-K-015" class="astro-RCNCRHVC">Healthcare Garment Feed Station 4	TAY-K-015</option>
+    <option value="Healthcare Garment Feed Station 5	TAY-K-016" class="astro-RCNCRHVC">Healthcare Garment Feed Station 5	TAY-K-016</option>
+    <option value="Healthcare Garment Feed Station 6	TAY-K-017" class="astro-RCNCRHVC">Healthcare Garment Feed Station 6	TAY-K-017</option>
+    <option value="Healthcare Garment Feed Station 7	TAY-K-018" class="astro-RCNCRHVC">Healthcare Garment Feed Station 7	TAY-K-018</option>
+    <option value="Healthcare Garment Steam Finishing Tunnel	TAY-K-019" class="astro-RCNCRHVC">Healthcare Garment Steam Finishing Tunnel	TAY-K-019</option>
+    <option value="Healthcare Garment Transline	TAY-K-020" class="astro-RCNCRHVC">Healthcare Garment Transline	TAY-K-020</option>
+    <option value="Healthcare Garment FAX Folder	TAY-K-021" class="astro-RCNCRHVC">Healthcare Garment FAX Folder	TAY-K-021</option>
+    <option value="Healthcare Garment FAX Folder	TAY-K-022" class="astro-RCNCRHVC">Healthcare Garment FAX Folder	TAY-K-022</option>
+    <option value="Healthcare Garment FAX Folder	TAY-K-023" class="astro-RCNCRHVC">Healthcare Garment FAX Folder	TAY-K-023</option>
+    <option value="Industrial Garment Feed Station 1	TAY-K-024" class="astro-RCNCRHVC">Industrial Garment Feed Station 1	TAY-K-024</option>
+    <option value="Industrial Garment Feed Station 2	TAY-K-025" class="astro-RCNCRHVC">Industrial Garment Feed Station 2	TAY-K-025</option>
+    <option value="Industrial Garment Feed Station 3	TAY-K-026" class="astro-RCNCRHVC">Industrial Garment Feed Station 3	TAY-K-026</option>
+    <option value="Industrial Garment Steam Finishing Tunnel	TAY-K-027" class="astro-RCNCRHVC">Industrial Garment Steam Finishing Tunnel	TAY-K-027</option>
+    <option value="Industrial Garment Transline	TAY-K-028" class="astro-RCNCRHVC">Industrial Garment Transline	TAY-K-028</option>
+    <option value="Industrial Garment FAX Folder	TAY-K-029" class="astro-RCNCRHVC">Industrial Garment FAX Folder	TAY-K-029</option>
+  </optgroup>
+
+  <optgroup label="CSSD" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Sterilizer #1	TAY-CSSD-001" class="astro-RCNCRHVC">Sterilizer #1	TAY-CSSD-001</option>
+    <option value="Sterilizer #2	TAY-CSSD-002" class="astro-RCNCRHVC">Sterilizer #2	TAY-CSSD-002</option>
+  </optgroup>
+
+  <optgroup label="Dry Cleaning" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Multisolvent Drycleaning Machine	TAY-L-001" class="astro-RCNCRHVC">Multisolvent Drycleaning Machine	TAY-L-001</option>
+    <option value="Multisolvent Drycleaning Machine	TAY-L-002" class="astro-RCNCRHVC">Multisolvent Drycleaning Machine	TAY-L-002</option>
+    <option value="SlimLine Multisolvent Drycleaning Machine	TAY-L-003" class="astro-RCNCRHVC">SlimLine Multisolvent Drycleaning Machine	TAY-L-003</option>
+    <option value="Shirt Press	TAY-L-004" class="astro-RCNCRHVC">Shirt Press	TAY-L-004</option>
+    <option value="Collar &amp; Cuff Press	TAY-L-005" class="astro-RCNCRHVC">Collar &amp; Cuff Press	TAY-L-005</option>
+    <option value="Trouser Former	TAY-L-006" class="astro-RCNCRHVC">Trouser Former	TAY-L-006</option>
+    <option value="Trouser Former	TAY-L-007" class="astro-RCNCRHVC">Trouser Former	TAY-L-007</option>
+    <option value="Ironing Table	TAY-L-008" class="astro-RCNCRHVC">Ironing Table	TAY-L-008</option>
+    <option value="Ironing Table	TAY-L-009" class="astro-RCNCRHVC">Ironing Table	TAY-L-009</option>
+    <option value="Ironing Table	TAY-L-010" class="astro-RCNCRHVC">Ironing Table	TAY-L-010</option>
+    <option value="Multi Form Finisher	TAY-L-011" class="astro-RCNCRHVC">Multi Form Finisher	TAY-L-011</option>
+    <option value="Rotary Form Finisher	TAY-L-012" class="astro-RCNCRHVC">Rotary Form Finisher	TAY-L-012</option>
+    <option value="Refrigeration Unit 1	TAY-L-013" class="astro-RCNCRHVC">Refrigeration Unit 1	TAY-L-013</option>
+    <option value="Refrigeration Unit 2	TAY-L-014" class="astro-RCNCRHVC">Refrigeration Unit 2	TAY-L-014</option>
+  </optgroup>
+
+  <optgroup label="Packout" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Strapping Machine	TAY-M-001" class="astro-RCNCRHVC">Strapping Machine	TAY-M-001</option>
+    <option value="Strapping Machine	TAY-M-002" class="astro-RCNCRHVC">Strapping Machine	TAY-M-002</option>
+    <option value="Strapping Machine	TAY-M-003" class="astro-RCNCRHVC">Strapping Machine	TAY-M-003</option>
+    <option value="Strapping Machine	TAY-M-004" class="astro-RCNCRHVC">Strapping Machine	TAY-M-004</option>
+    <option value="Strapping Machine	TAY-M-005" class="astro-RCNCRHVC">Strapping Machine	TAY-M-005</option>
+    <option value="Strapping Machine	TAY-M-006" class="astro-RCNCRHVC">Strapping Machine	TAY-M-006</option>
+    <option value="Strapping Machine	TAY-M-007" class="astro-RCNCRHVC">Strapping Machine	TAY-M-007</option>
+    <option value="Strapping Machine	TAY-M-008" class="astro-RCNCRHVC">Strapping Machine	TAY-M-008</option>
+    <option value="Strapping Machine	TAY-M-009" class="astro-RCNCRHVC">Strapping Machine	TAY-M-009</option>
+    <option value="Strapping Machine	TAY-M-010" class="astro-RCNCRHVC">Strapping Machine	TAY-M-010</option>
+    <option value="Strapping Machine	TAY-M-011" class="astro-RCNCRHVC">Strapping Machine	TAY-M-011</option>
+  </optgroup>
+
+  <optgroup label="Engineering" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Milling Machine	TAY-N-001" class="astro-RCNCRHVC">Milling Machine	TAY-N-001</option>
+    <option value="Press 20T	TAY-N-002" class="astro-RCNCRHVC">Press 20T	TAY-N-002</option>
+    <option value="Drill Press	TAY-N-003" class="astro-RCNCRHVC">Drill Press	TAY-N-003</option>
+    <option value="Drill Press	TAY-N-004" class="astro-RCNCRHVC">Drill Press	TAY-N-004</option>
+    <option value="Drill Press	TAY-N-005" class="astro-RCNCRHVC">Drill Press	TAY-N-005</option>
+    <option value="Lathe	TAY-N-006" class="astro-RCNCRHVC">Lathe	TAY-N-006</option>
+    <option value="Lathe	TAY-N-007" class="astro-RCNCRHVC">Lathe	TAY-N-007</option>
+    <option value="Belt Sander	TAY-N-008" class="astro-RCNCRHVC">Belt Sander	TAY-N-008</option>
+    <option value="Bandsaw	TAY-N-009" class="astro-RCNCRHVC">Bandsaw	TAY-N-009</option>
+    <option value="Bandsaw	TAY-N-010" class="astro-RCNCRHVC">Bandsaw	TAY-N-010</option>
+  </optgroup>
+
+  <optgroup label="Sewing Room" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+    <option value="Heat Seal Machine	TAY-O-001" class="astro-RCNCRHVC">Heat Seal Machine	TAY-O-001</option>
+    <option value="Thermal Transfer Press	TAY-O-002" class="astro-RCNCRHVC">Thermal Transfer Press	TAY-O-002</option>
+    <option value="Heat Press 1	TAY-O-003" class="astro-RCNCRHVC">Heat Press 1	TAY-O-003</option>
+    <option value="Heat Press 2	TAY-O-004" class="astro-RCNCRHVC">Heat Press 2	TAY-O-004</option>
+    <option value="Sewing Machine	TAY-O-005" class="astro-RCNCRHVC">Sewing Machine	TAY-O-005</option>
+    <option value="Sewing Machine	TAY-O-006" class="astro-RCNCRHVC">Sewing Machine	TAY-O-006</option>
+    <option value="Sewing Machine	TAY-O-007" class="astro-RCNCRHVC">Sewing Machine	TAY-O-007</option>
+    <option value="Sewing Machine	TAY-O-008" class="astro-RCNCRHVC">Sewing Machine	TAY-O-008</option>
+    <option value="Sewing Machine	TAY-O-009" class="astro-RCNCRHVC">Sewing Machine	TAY-O-009</option>
+    <option value="Sewing Machine	TAY-O-010" class="astro-RCNCRHVC">Sewing Machine	TAY-O-010</option>
+    <option value="Sewing Machine	TAY-O-011" class="astro-RCNCRHVC">Sewing Machine	TAY-O-011</option>
+    <option value="Sewing Machine	TAY-O-012" class="astro-RCNCRHVC">Sewing Machine	TAY-O-012</option>
+    <option value="Sewing Machine	TAY-O-013" class="astro-RCNCRHVC">Sewing Machine	TAY-O-013</option>
+  </optgroup>
+
+  <optgroup label="Facilities" style="font-family:'helvetica', 'arial';font-size: 16px;" class="astro-RCNCRHVC">
+  <option value="Fork Hoist	TAY-P-001" class="astro-RCNCRHVC">Fork Hoist	TAY-P-001</option>
+  <option value="Fork Hoist	TAY-P-002" class="astro-RCNCRHVC">Fork Hoist	TAY-P-002</option>
+  <option value="Air Compressor 1	TAY-P-003" class="astro-RCNCRHVC">Air Compressor 1	TAY-P-003</option>
+  <option value="Air Compressor 2	TAY-P-004" class="astro-RCNCRHVC">Air Compressor 2	TAY-P-004</option>
+  <option value="Boiler 1	TAY-P-005" class="astro-RCNCRHVC">Boiler 1	TAY-P-005</option>
+  <option value="Boiler 2	TAY-P-006" class="astro-RCNCRHVC">Boiler 2	TAY-P-006</option>
+  <option value="Water Softener	TAY-P-007" class="astro-RCNCRHVC">Water Softener	TAY-P-007</option>
+  <option value="Water Pump 1	TAY-P-008" class="astro-RCNCRHVC">Water Pump 1	TAY-P-008</option>
+  <option value="Water Pump 2	TAY-P-009" class="astro-RCNCRHVC">Water Pump 2	TAY-P-009</option>
+  <option value="Water Pump 3	TAY-P-010" class="astro-RCNCRHVC">Water Pump 3	TAY-P-010</option>
+  <option value="Water Pump 4	TAY-P-011" class="astro-RCNCRHVC">Water Pump 4	TAY-P-011</option>
+  <option value="Steam Energy Infrastructure	TAY-P-012" class="astro-RCNCRHVC">Steam Energy Infrastructure	TAY-P-012</option>
+  </optgroup>
+
 </select>
-  <textarea name="description" id="description" placeholder="Job Description" required="" class="astro-LCWLHT7S"></textarea>
-  <textarea name="parts" id="parts" placeholder="parts used" class="astro-LCWLHT7S"></textarea>
-  <textarea name="consumables" id="consumables" placeholder="consumables used" class="astro-LCWLHT7S"></textarea>
-  <textarea name="furtheraction" id="furtheraction" placeholder="further action needed?" class="astro-LCWLHT7S"></textarea>
-  <button type="submit" class="astro-LCWLHT7S">Submit</button>
+  <textarea name="description" id="description" placeholder="Job Description" required="" class="astro-RCNCRHVC"></textarea>
+  <textarea name="parts" id="parts" placeholder="parts used" class="astro-RCNCRHVC"></textarea>
+  <textarea name="consumables" id="consumables" placeholder="consumables used" class="astro-RCNCRHVC"></textarea>
+  <textarea name="furtheraction" id="furtheraction" placeholder="further action needed?" class="astro-RCNCRHVC"></textarea>
+  <button type="submit" class="astro-RCNCRHVC">Submit</button>
 
 </form>
 </div>
