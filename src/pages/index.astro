@@ -1,9 +1,10 @@
 ---
 import Page from "~/layouts/FormLayout.astro";
 import Form from "~/components/form/JobSheet.astro";
+import JobsheetTable from "../components/JobsheetTable.jsx";
 ---
 
 
 <Page>
-  <Form/>
+  <JobsheetTable client:load/>
 </Page>
