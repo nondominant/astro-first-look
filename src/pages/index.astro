@@ -1,10 +1,17 @@
 ---
 import Page from "~/layouts/FormLayout.astro";
 import Form from "~/components/form/JobSheet.astro";
-import JobsheetTable from "../components/JobsheetTable.jsx";
+import JobsheetTable from "~/components/JobsheetTable.jsx";
+ import {
+   QueryClient,
+   QueryClientProvider,
+ } from 'react-query'
+
+const queryClient = new QueryClient()
 ---
 
-
-<Page>
-  <JobsheetTable client:load/>
-</Page>
+<QueryClientProvider client={queryClient}>
+  <Page>
+    <JobsheetTable client:load/>
+  </Page>
+</QueryClientProvider>

@@ -27,6 +27,7 @@
     "node": ">=14"
   },
   "dependencies": {
+    "@astrojs/node": "^1.0.1",
     "react-query": "^3.39.2"
   }
 }
