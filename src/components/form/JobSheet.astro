@@ -1,44 +1,6 @@
 ---
-
-const data = await fetch("http://192.168.1.252/server/active", {
-  method: "GET",
-  headers: {
-    'Accept': 'application/json',	
-    'Content-Type': 'application/json'}
-    }).then(res => 
-    {
-    return res.json()
-    });
+import JobsheetTable from "~/components/react/JobsheetTable.jsx";
 ---
-
-<script>
-
-  window.done = async function done(node, id) {
-      console.log(node);
-      const sheet = document.getElementById(id);
-      console.log(sheet);
-      await fetch("http://192.168.1.252/server/close", {
-        method: "POST",
-        headers: {
-          'Accept': 'application/json',	
-            'Content-Type': 'application/json'},
-          body: JSON.stringify({"id": id})
-        }).then(res => 
-          {
-              console.log(res);
-              //remove the node
-              sheet.classList.add("flash");
-              sheet.classList.add("gone");
-              node.classList.add("flash");
-              node.classList.add("gone");
-
-            }).catch(() => {
-                window.confirm("something went wrong, get Pete !!");
-            });
-
-  }
-</script>
-
 <style>
   .gone {
     position: absolute;
@@ -128,26 +90,4 @@ const data = await fetch("http://192.168.1.252/server/active", {
   }
 </style>
 
-<div class="page">
-  {
-  data.map(x => 
-  <div class="container">
-    <div class="header"><button onclick=`done(this, ${x.id})`>DONE!</button></div>
-    <div class="sheet" id=`${x.id}`>
-    <div class="field"><h2>ID</h2><p>{x.id}</p></div>
-    <div class="field"><h2>Job Description</h2><p>{x.quote}</p></div>
-    <div class="field"><h2>Engineer</h2><p>{x.author}</p></div>
-    <div class="field"><h2>Date</h2><p>{x.year}</p></div>
-    <div class="field"><h2>Start Time</h2><p>{x.startTime}</p></div>
-    <div class="field"><h2>End Time</h2><p>{x.endTime}</p></div>
-    <div class="field"><h2>Equipment</h2><p>{x.equipment}</p></div>
-    <div class="field"><h2>Parts Used</h2><p>{x.partsUsed}</p></div>
-    <div class="field"><h2>Materials Used</h2><p>{x.materialsUsed}</p></div>
-    <div class="field"><h2>Further Action Required</h2><p>{x.furtherAction}</p></div>
-    <div class="field"><h2>Location</h2><p>{x.location}</p></div>
-    <div class="field"><h2>Amendments</h2><p>{x.updateList}</p></div>
-  </div>
-  </div>
-  )
-  }
-</div>
+<JobsheetTable client:load/>

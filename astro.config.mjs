@@ -14,7 +14,6 @@ export default defineConfig({
   integrations: [
     react()
   ],
-
   vite: {
     resolve: {
       alias: {
