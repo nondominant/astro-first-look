@@ -3,25 +3,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="./assets/index.d7256a52.css"><script type="module">window.del=async function(r){document.querySelector(".page").classList.add("flash"),await fetch("http://192.168.1.252/server/close",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify({id:r})}).then(o=>{console.log("response on delete ",o)}).catch(()=>{window.alert("something went wrong, tell Pete")}),updateList()};window.updateList=async function(){const r=await fetch("http://192.168.1.252/server/active",{method:"GET",headers:{Accept:"application/json","Content-Type":"application/json"}}).then(e=>e.json());let n=document.querySelector(".page"),o=document.querySelector(".sheet");Array.from(n.children).forEach(function(e){e.remove()}),r.map(e=>{let t=o.cloneNode(!0);return t.querySelector("#doneButton").setAttribute("onclick",`del(${e.id})`),t.querySelector("#idField").innerHTML=e.id,t.querySelector("#jobDescription").innerHTML=e.quote,t.querySelector("#engineer").innerHTML=e.author,t.querySelector("#dateField").innerHTML=e.year,t.querySelector("#start").innerHTML=e.startTime,t.querySelector("#end").innerHTML=e.endTime,t.querySelector("#equipment").innerHTML=e.equipment,t.querySelector("#parts").innerHTML=e.partsUsed,t.querySelector("#materials").innerHTML=e.materialsUsed,t.querySelector("#action").innerHTML=e.furtherAction,t}).map(e=>{try{n.insertBefore(e,n.firstChild)}catch{n.appendChild(e)}})};addEventListener("DOMContentLoaded",i=>{updateList()});
+  <link rel="stylesheet" href="./assets/index.131f7ecc.css"><script type="module">window.del=async function(n){document.querySelector(".page").classList.add("flash"),await fetch("http://192.168.1.252/server/close",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify({id:n})}).then(o=>{console.log("response on delete ",o)}).catch(()=>{window.alert("something went wrong, tell Pete")}),updateList()};window.updateList=async function(){const n=await fetch("http://192.168.1.252/server/active",{method:"GET",headers:{Accept:"application/json","Content-Type":"application/json"}}).then(e=>e.json());let r=document.querySelector(".page"),o=document.querySelector(".sheet");Array.from(r.children).forEach(function(e){e.remove()}),n.map(e=>{let t=o.cloneNode(!0);return t.querySelector("#doneButton").setAttribute("onclick",`del(${e.id})`),t.querySelector("#idField").innerHTML=e.id,t.querySelector("#jobDescription").innerHTML=e.quote,t.querySelector("#engineer").innerHTML=e.author,t.querySelector("#dateField").innerHTML=e.year,t.querySelector("#start").innerHTML=e.startTime,t.querySelector("#end").innerHTML=e.endTime,t.querySelector("#equipment").innerHTML=e.equipment,t.querySelector("#parts").innerHTML=e.partsUsed,t.querySelector("#materials").innerHTML=e.materialsUsed,t.querySelector("#action").innerHTML=e.furtherAction,t}).map(e=>r.appendChild(e))};addEventListener("DOMContentLoaded",i=>{updateList()});
 </script></head><body class="astro-N6KCCFMK">
     
 
 
 
-<div class="page astro-UEK6MJUE">
-      <div class="sheet astro-UEK6MJUE">
-        <div class="button astro-UEK6MJUE"> <button id="doneButton" class="astro-UEK6MJUE">DONE</button></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">ID</h2><p id="idField" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Job Description</h2><p id="jobDescription" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Engineer</h2><p id="engineer" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Date</h2><p id="dateField" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Start Time</h2><p id="start" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">End Time</h2><p id="end" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Equipment</h2><p id="equipment" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Parts Used</h2><p id="parts" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Materials Used</h2><p id="materials" class="astro-UEK6MJUE"></p></div>
-        <div class="field astro-UEK6MJUE"><h2 class="astro-UEK6MJUE">Further Action</h2><p id="action" class="astro-UEK6MJUE"></p></div>
+<div class="page astro-KF6SS5KK">
+      <div class="sheet astro-KF6SS5KK">
+        <div class="button astro-KF6SS5KK"> <button id="doneButton" class="astro-KF6SS5KK">DONE</button></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">ID</h2><p id="idField" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Job Description</h2><p id="jobDescription" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Engineer</h2><p id="engineer" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Date</h2><p id="dateField" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Start Time</h2><p id="start" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">End Time</h2><p id="end" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Equipment</h2><p id="equipment" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Parts Used</h2><p id="parts" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Materials Used</h2><p id="materials" class="astro-KF6SS5KK"></p></div>
+        <div class="field astro-KF6SS5KK"><h2 class="astro-KF6SS5KK">Further Action</h2><p id="action" class="astro-KF6SS5KK"></p></div>
   </div>
 </div>
   </body></html>
