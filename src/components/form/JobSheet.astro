@@ -1,42 +1,86 @@
 ---
-
-const data = await fetch("http://192.168.1.252/server/active", {
-  method: "GET",
-  headers: {
-    'Accept': 'application/json',	
-    'Content-Type': 'application/json'}
-    }).then(res => 
-    {
-    return res.json()
-    });
 ---
 
 <script>
+  window.del = async function del(currentId) {
+    let component = document.querySelector('.page');
+    component.classList.add("flash");
+    const response = await fetch("http://192.168.1.252/server/close", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({id: currentId})
+    }).then(res => {
+      //add classes for animation
+        console.log("response on delete ", res);
+    }).catch(() => {
+        window.alert("something went wrong, tell Pete");
+    })
+      updateList();
+    }
+  window.updateList = async function updateList() {
+    const data = await fetch("http://192.168.1.252/server/active", {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',	
+        'Content-Type': 'application/json'}
+      })
+      .then(res => 
+       {
+           return res.json();
+       });
 
-  window.done = async function done(node, id) {
-      console.log(node);
-      const sheet = document.getElementById(id);
-      console.log(sheet);
-      await fetch("http://192.168.1.252/server/close", {
-        method: "POST",
-        headers: {
-          'Accept': 'application/json',	
-            'Content-Type': 'application/json'},
-          body: JSON.stringify({"id": id})
-        }).then(res => 
-          {
-              console.log(res);
-              //remove the node
-              sheet.classList.add("flash");
-              sheet.classList.add("gone");
-              node.classList.add("flash");
-              node.classList.add("gone");
+      //get parent
+      let parentNode = document.querySelector('.page');
+      //map data to children
+      let originalNode = document.querySelector('.sheet');
 
-            }).catch(() => {
-                window.confirm("something went wrong, get Pete !!");
-            });
+      Array.from(parentNode.children).forEach(function (element) {
+          element.remove();
+      });
+      let children = data.map(x => {
+      //let children = [{id:1234},{id:4454},{id:4665}].map(x => {
+          let node = originalNode.cloneNode(true);
+          node.querySelector('#doneButton').setAttribute('onclick', `del(${x.id})`);
+          node.querySelector('#idField').innerHTML = x.id;
+          node.querySelector('#jobDescription').innerHTML = x.quote;
+          node.querySelector('#engineer').innerHTML = x.author;
+          node.querySelector('#dateField').innerHTML = x.year;
+          node.querySelector('#start').innerHTML = x.startTime;
+          node.querySelector('#end').innerHTML = x.endTime;
+          node.querySelector('#equipment').innerHTML = x.equipment;
+          node.querySelector('#parts').innerHTML = x.partsUsed;
+          node.querySelector('#materials').innerHTML = x.materialsUsed;
+          node.querySelector('#action').innerHTML = x.furtherAction;
 
-  }
+          // node.querySelector('#idField').innerHTML = "x.id";
+          // node.querySelector('#jobDescription').innerHTML = "x.quote";
+          // node.querySelector('#engineer').innerHTML = "x.author";
+          // node.querySelector('#dateField').innerHTML = "x.year";
+          // node.querySelector('#start').innerHTML = "x.startTime";
+          // node.querySelector('#end').innerHTML = "x.endTime";
+          // node.querySelector('#equipment').innerHTML = "x.equipment";
+          // node.querySelector('#parts').innerHTML = "x.partsUsed";
+          // node.querySelector('#materials').innerHTML = "x.materialsUsed";
+          // node.querySelector('#action').innerHTML = "x.furtherAction this is the day of the dead mother fucker ahahaha";
+          return node;
+
+        });
+      //children.map(x => parentNode.appendChild(x));
+      children.map(x => {
+          try {
+            parentNode.insertBefore(x, parentNode.firstChild)
+          } catch {
+            parentNode.appendChild(x)
+          }
+        });
+    }
+
+  addEventListener('DOMContentLoaded', (event) => {
+      updateList()
+    });
 </script>
 
 <style>
@@ -47,26 +91,22 @@ const data = await fetch("http://192.168.1.252/server/active", {
     transition: all 9s ease;
   }
   .flash {
-    animation: red ease 500ms forwards;
+    animation: red-border ease 500ms forwards;
   }
   @keyframes red-border{
     from {
       border: red solid 2px;
-      opacity: 1;
     }
     to {
       border: white solid 2px;
-      opacity: 0;
     }
   }
   @keyframes red{
     from {
       background: red;
-      opacity: 1;
     }
     to {
-      background: white;
-      opacity: 0;
+      background: transparent;
     }
   }
   .page {
@@ -74,49 +114,45 @@ const data = await fetch("http://192.168.1.252/server/active", {
     margin: 10vw;
     display: flex;
     justify-content: center;
-
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem 2rem;
-  }
-  .container {
+    border: white solid 2px;
+
   }
   .sheet {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
-    gap: 1rem;
-    justify-items: stretch;
-    align-items: stretch;
-    padding: 1rem;
-    width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
     background: rgba(250,250,250, 0.61);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     transition: all 9s ease;
   }
-  .header {
-    display: flex;
-    height: 6rem;
-    width: 400px;
-    align-items: end;
-    transition: all 9s ease;
-
-  }
-
   .sheet p {
-    padding: 1rem;
+    padding:1rem;
   }
   .sheet h2 {
-    width: 8rem;
     border-bottom: black solid 1px;
   }
   .field {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    margin: 0.5rem;
+    max-width: 10rem;
     min-height: 5rem;
-    width: auto;
     align-items: start;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  }
+  .field p {
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  .button{
+
+    width: 100%;
   }
   button {
     font-weight: 900;
@@ -129,25 +165,20 @@ const data = await fetch("http://192.168.1.252/server/active", {
 </style>
 
 <div class="page">
-  {
-  data.map(x => 
-  <div class="container">
-    <div class="header"><button onclick=`done(this, ${x.id})`>DONE!</button></div>
-    <div class="sheet" id=`${x.id}`>
-    <div class="field"><h2>ID</h2><p>{x.id}</p></div>
-    <div class="field"><h2>Job Description</h2><p>{x.quote}</p></div>
-    <div class="field"><h2>Engineer</h2><p>{x.author}</p></div>
-    <div class="field"><h2>Date</h2><p>{x.year}</p></div>
-    <div class="field"><h2>Start Time</h2><p>{x.startTime}</p></div>
-    <div class="field"><h2>End Time</h2><p>{x.endTime}</p></div>
-    <div class="field"><h2>Equipment</h2><p>{x.equipment}</p></div>
-    <div class="field"><h2>Parts Used</h2><p>{x.partsUsed}</p></div>
-    <div class="field"><h2>Materials Used</h2><p>{x.materialsUsed}</p></div>
-    <div class="field"><h2>Further Action Required</h2><p>{x.furtherAction}</p></div>
-    <div class="field"><h2>Location</h2><p>{x.location}</p></div>
-    <div class="field"><h2>Amendments</h2><p>{x.updateList}</p></div>
+      <div class="sheet">
+        <div class="button"> <button id="doneButton">DONE</button></div>
+        <div class="field"><h2>ID</h2><p id="idField"></p></div>
+        <div class="field"><h2>Job Description</h2><p id="jobDescription"></p></div>
+        <div class="field"><h2>Engineer</h2><p id="engineer"></p></div>
+        <div class="field"><h2>Date</h2><p id="dateField"></p></div>
+        <div class="field"><h2>Start Time</h2><p id="start"></p></div>
+        <div class="field"><h2>End Time</h2><p id="end"></p></div>
+        <div class="field"><h2>Equipment</h2><p id="equipment"></p></div>
+        <div class="field"><h2>Parts Used</h2><p id="parts"></p></div>
+        <div class="field"><h2>Materials Used</h2><p id="materials"></p></div>
+        <div class="field"><h2>Further Action</h2><p id="action"></p></div>
   </div>
-  </div>
-  )
-  }
 </div>
+
+
+
