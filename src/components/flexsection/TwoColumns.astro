@@ -1,0 +1,42 @@
+---
+---
+
+<style>
+  .section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 70vh;
+    background: rgba(0,100,255,0.5);
+    border: yellow solid 5px;
+  }
+  .left {
+    display: flex;
+    width: 50%;
+    min-height: 100%;
+    border: red solid 2px;
+    justify-content: center;
+    align-items: center;
+  }
+  .right {
+    display: flex;
+    width: 50%;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: green solid 2px;
+  }
+  @media (max-width: 860px){
+    .section {
+      flex-direction: column;
+    }
+    .left, .right {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="section">
+  <div class="left"><slot name="left"/></div>
+  <div class="right"><slot name="right"/></div>
+</div>

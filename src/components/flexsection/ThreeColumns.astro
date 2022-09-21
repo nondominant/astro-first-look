@@ -1,0 +1,44 @@
+---
+---
+
+<style>
+  .section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 80vw;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,100,255,0.5);
+  }
+  .left {
+    width: 33%;
+    height: 100%;
+    border: red solid 2px;
+  }
+  .right {
+    width: 33%;
+    height: 100%;
+    border: green solid 2px;
+  }
+  .middle {
+    width: 33%;
+    height: 100%;
+    border: blue solid 2px;
+  }
+  @media (max-width: 860px){
+    .section{
+      flex-direction: column;
+    }
+    .left, .right, .middle {
+      width: 100%;
+    }
+
+  }
+</style>
+
+<div class="section">
+  <div class="left"><slot name="left"/></div>
+  <div class="middle"><slot name="middle"/></div>
+  <div class="right"><slot name="right"/></div>
+</div>

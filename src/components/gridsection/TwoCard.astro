@@ -1,0 +1,30 @@
+---
+---
+<style>
+  .container{
+ width: 100%;
+ display: grid;
+ grid-template-columns:  2fr 3fr 2fr;
+}
+.item-1 {
+ grid-column: 1 / 4;
+}
+.item-2 {
+ grid-row: 2 / 3;
+}
+.item-3 {
+ grid-row: 2 / 3;
+}
+@media only screen and (max-width: 45em){
+  .container{
+   grid-template-columns: 1fr 1fr;
+  } 
+}
+
+</style>
+
+<div class="container">
+  <div class="item-1" style="min-height:10rem;min-width:10rem;"><slot name="one"/> </div>
+  <div class="item-2" style="min-height:10rem;min-width:10rem;"><slot name="two"/> </div>
+  <div class="item-3" style="min-height:10rem;min-width:10rem;"><slot name="three"/> </div>
+</div>

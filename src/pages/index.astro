@@ -1,37 +1,74 @@
 ---
 import Page from "~/layouts/PageLayout.astro";
-import DuoTone from "~/components/calltoaction/DuoToneCTA.astro";
-import GiantButton from "~/components/calltoaction/GiantButtonCTA.astro";
-import BreakLeft from "~/components/sectionbreak/BreakLeftOverlay.astro";
-import BreakRight from "~/components/sectionbreak/BreakRightOverlay.astro";
-import BreakCenter from "~/components/sectionbreak/BreakCenterOverlay.astro";
-import SvgBottom from "~/components/sectionbreak/BreakSvgBottom.astro";
-import Background from "~/components/featuresection/SvgBackground.astro";
-import SideBar from "~/components/sidebar/HighlightedSidebar.astro";
 import Bubble from "~/components/sidebar/CollapsibleSidebar.astro";
-
+import FiveCard from "~/components/gridsection/FiveCard.astro";
+import FourCard from "~/components/gridsection/FourCard.astro";
+import ThreeCard from "~/components/gridsection/ThreeCard.astro";
+import TwoCard from "~/components/gridsection/TwoCard.astro";
+import ImageCard from "~/components/card/ImageCard.astro";
+import Paragraph from "~/components/card/ParagraphCard.astro";
+import BodyGrid from "~/components/gridsection/GridA.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+import OneColumn from "~/components/flexsection/OneColumn.astro";
 ---
 
 
 <Page>
   <Bubble>
   </Bubble>
-  <BreakCenter/>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
-  <DuoTone>
-  </DuoTone>
-  <div slot="rightside">goodbye</div>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
-  <BreakLeft />
-  <BreakRight/>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
-  <SvgBottom>
-    <GiantButton/>
-  </SvgBottom>
+  <BodyGrid slot="rightside"/>
+  <BodyGrid slot="leftside"/>
+  <TwoColumns>
+  <ThreeCard slot="left">
+    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+  </ThreeCard>
+  <ThreeCard slot="right">
+    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+  </ThreeCard>
+  </TwoColumns>
+  <OneColumn>
+  <TwoCard >
+    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+  </TwoCard>
+  </OneColumn>
+  <OneColumn>
+  <ThreeCard >
+    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+  </ThreeCard>
+  </OneColumn>
+  <OneColumn>
+  <FourCard >
+    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+  </FourCard>
+  </OneColumn>
+  <OneColumn>
+  <FiveCard >
+    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="six">explanation paragraph</div>
+  </FiveCard>
+  </OneColumn>
 </Page>
