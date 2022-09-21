@@ -244,7 +244,8 @@ select {
   <div class="date">
    <input id="namefield" type="text" name="namefield" placeholder="Name" required>
   </div>
-<select name="Equipment" placeholder="Select Equipment">
+<input list="Equipment" name="Equipment">
+<datalist id="Equipment" name="Equipment" placeholder="Select Equipment">
   <optgroup label="Sorting"style="font-family:'helvetica', 'arial';font-size: 16px;">
     <option value="Bag Remover	TAY-A-001">Bag Remover	TAY-A-001</option>
     <option value="Primary Bag System	TAY-SUPERTRACK2-A">Primary Bag System	TAY-SUPERTRACK2-A</option>
@@ -597,7 +598,7 @@ select {
     <option value="Heat Press 2">Heat Press 2</option>
     <option value="Sewing Machine">Sewing Machine</option>
   </optgroup>
-</select>
+</datalist>
   <textarea name="description" name="description" id="description" placeholder="Job Description" required></textarea>
   <textarea name="parts"  name="parts" id="parts" placeholder="parts used"></textarea>
   <textarea name="consumables" name="consumables" id="consumables" placeholder="consumables used"></textarea>
