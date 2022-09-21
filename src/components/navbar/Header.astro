@@ -9,9 +9,12 @@ const { } = Astro.props;
   li, ul {
   list-style: none;
 }
-[data-is-scrolling-up="true"] .menu{
-  background: black;
-  transition: all ease 1s;
+[data-is-top="true"] .menu{
+  opacity: 1;
+}
+[data-is-scrolling-up="false"] .menu{
+  opacity: 0;
+  transition: all ease 500ms;
 }
 .menu {
   position: fixed;
@@ -22,7 +25,8 @@ const { } = Astro.props;
   align-items: center;
   width: 100%;
   min-height: 10rem;
-  background: transparent;
+  background: black;
+  transition: all ease 500ms;
   z-index: 99;
 }
 .menu a {

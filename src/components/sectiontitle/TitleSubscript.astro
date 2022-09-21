@@ -1,0 +1,30 @@
+---
+const {title, subscript} = Astro.props;
+---
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+    justify-content: center;
+  }
+  h1 {
+    font-family: "sohne-var","Helvetica Neue","Arial",sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-family: "sohne-var","Helvetica Neue","Arial",sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+</style>
+
+  <div class="container">
+  <h1>{title}</h1>
+  <h3>{subscript}</h3>
+  </div>

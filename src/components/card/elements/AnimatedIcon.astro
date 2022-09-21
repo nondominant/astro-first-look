@@ -1,0 +1,53 @@
+---
+---
+<style>
+  svg {
+  transition: all 1s ease;
+}
+  #triangles {
+  transform: translateX(10%);
+}
+#dark-g {
+  fill: rgba(0,100,255,0.5);
+}
+#dark-1 {
+  transition: all 1s ease;
+  transform: translateX(0%);
+  opacity: 1;
+}
+#dark-2 {
+  transition: all 1s ease;
+  transform: translateX(-100%);
+}
+#light {
+  fill: rgba(100,100,255,0.5);
+  transition: all 1s ease;
+  transform: translateX(0%);
+  opacity: 1;
+}
+  svg:hover #dark-2 {
+  transition: all 1s ease;
+  transform: translateX(0%);
+}
+svg:hover #dark-1 {
+  transition: all 1s ease;
+  transform: translateX(+20%);
+  opacity: 0;
+}
+svg:hover #light {
+  transition: all 1s ease;
+  transform: translateX(20%);
+}
+
+
+</style>
+      <svg width="120" height="100" id="button" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="triangles">
+      <path id="light" d="M47 48.2679C48.3333 49.0377 48.3333 50.9623 47 51.7321L15.5 69.9186C14.1667 70.6884 12.5 69.7261 12.5 68.1865L12.5 31.8135C12.5 30.2739 14.1667 29.3116 15.5 30.0814L47 48.2679Z" />
+      <g id="dark-g">
+      <path id="dark-2" d="M47 48.2679C48.3333 49.0377 48.3333 50.9623 47 51.7321L15.5 69.9186C14.1667 70.6884 12.5 69.7261 12.5 68.1865L12.5 31.8135C12.5 30.2739 14.1667 29.3116 15.5 30.0814L47 48.2679Z"/>
+      <path id="dark-1" d="M74 48.2679C75.3333 49.0377 75.3333 50.9623 74 51.7321L42.5 69.9186C41.1667 70.6884 39.5 69.7261 39.5 68.1865L39.5 31.8135C39.5 30.2739 41.1667 29.3116 42.5 30.0814L74 48.2679Z"/>
+      </g>
+      </g>
+      </svg>
+

@@ -10,6 +10,15 @@ import Paragraph from "~/components/card/ParagraphCard.astro";
 import BodyGrid from "~/components/gridsection/GridA.astro";
 import TwoColumns from "~/components/flexsection/TwoColumns.astro";
 import OneColumn from "~/components/flexsection/OneColumn.astro";
+import TitleSuperscript from "~/components/sectiontitle/TitleSuperscript.astro";
+import TitleSubscript from "~/components/sectiontitle/TitleSubscript.astro";
+import Title from "~/components/sectiontitle/Title.astro";
+import SmallHeading from "~/components/card/elements/SmallHeading.astro";
+import BasicText from "~/components/card/elements/BasicText.astro";
+import SmallLink from "~/components/card/elements/SmallLink.astro";
+import AnimatedIcon from "~/components/card/elements/AnimatedIcon.astro";
+import BreakRightOverlay from "~/components/sectionbreak/BreakRightOverlay.astro";
+import BreakSvgBottom from "~/components/sectionbreak/BreakSvgBottom.astro";
 ---
 
 
@@ -20,55 +29,100 @@ import OneColumn from "~/components/flexsection/OneColumn.astro";
   <BodyGrid slot="leftside"/>
   <TwoColumns>
   <ThreeCard slot="left">
-    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
-  </ThreeCard>
-  <ThreeCard slot="right">
-    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+    <TitleSubscript title="Buy our product because our website is so fast" subscript="you love it" slot="one"/>
+    <Paragraph slot="three">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
   </ThreeCard>
   </TwoColumns>
+
   <OneColumn>
-  <TwoCard >
-    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+  <TwoCard>
+    <TitleSuperscript title="Two card Title" superscript="yes I do" primary="red" secondary="yellow" slot="one"/>
+    <Paragraph slot="two">
+      <animatedicon slot="icon"/>
+      <smallheading heading="use our gateway" slot="heading"/>
+      <basictext paragraph="get up and running with stripe in as little as 10 minutes." slot="paragraph"/>
+      <smalllink href="/about/" linktext="read more >" slot="link"/>
+    </Paragraph>
   </TwoCard>
   </OneColumn>
+
+<BreakRightOverlay/>
   <OneColumn>
   <ThreeCard >
-    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+    <TitleSubscript title="Buy our product because our website is so fast" subscript="you love it" slot="one"/>
+    <Paragraph slot="three">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
   </ThreeCard>
   </OneColumn>
+
+<BreakRightOverlay/>
   <OneColumn>
   <FourCard >
-    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
+    <Title title="Single line of pure awesome" slot="one"/>
+    <Paragraph slot="two">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="three">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="four">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="five">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
   </FourCard>
   </OneColumn>
   <OneColumn>
-  <FiveCard >
-    <div style="height: 100%; width: 100%;background: rgba(255,0,0,0.3);" slot="one">Hero image</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,0,0.3);" slot="two">White space (buffer)</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,255,0.3);" slot="three">Section title</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,0,0,0.3);" slot="four">tl:dr bullet points</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="five">explanation paragraph</div>
-    <div style="height: 100%; width: 100%;background: rgba(0,255,255,0.3);" slot="six">explanation paragraph</div>
-  </FiveCard>
+  <FourCard >
+    <Title title="Single line of pure awesome" slot="one"/>
+    <Paragraph slot="two">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="three">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="four">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="five">
+      <AnimatedIcon slot="icon"/>
+      <SmallHeading heading="Use our gateway" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" linktext="Read more >" slot="link"/>
+    </Paragraph>
+  </FourCard>
   </OneColumn>
+
+
 </Page>

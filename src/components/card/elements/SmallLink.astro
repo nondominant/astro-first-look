@@ -1,0 +1,11 @@
+---
+const { linktext, href} = Astro.props;
+---
+<style>
+  a {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+</style>
+
+<a href=`${href}`>{linktext}</a>

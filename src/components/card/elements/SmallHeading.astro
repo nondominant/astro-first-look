@@ -1,0 +1,27 @@
+---
+const { heading } = Astro.props;
+---
+
+<style>
+  h4:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    border-left: blue solid 1px;
+    height: 1rem;
+    width: 1rem;
+  }
+  h4 {
+    position: relative;
+    font-family: "sohne-var","Helvetica Neue","Arial",sans-serif;
+    font-weight: 550;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<>
+<h4>{heading}</h4>
+</>
+
