@@ -1,6 +1,15 @@
 ---
-import Page from "~/layouts/PageLayout.astro";
----
+import Layout from "~/layouts/BareLayout.astro";
 
-<Page>
-</Page>
+import SectionOne from "~/components/pagesection/Home_1_1.astro";
+import SectionTwo from "~/components/pagesection/Home_1_2.astro";
+import SectionSeven from "~/components/pagesection/Home_1_7.astro";
+import SectionFour from "~/components/pagesection/Home_1_4.astro";
+import SectionFive from "~/components/pagesection/Home_1_5.astro";
+import Footer from "~/components/pagesection/Footer_1.astro";
+---
+<Layout>
+  <SectionSeven/>
+  <SectionFive/>
+</Layout>
+

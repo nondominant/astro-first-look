@@ -1,0 +1,85 @@
+---
+---
+<style>
+  svg {
+  transition: all 1s ease;
+}
+#Group_3 {
+  transform: translateY(15%) translateX(10%);
+}
+#Group_2 {
+  fill: rgba(0,100,255,0.3);
+}
+#Group_1 {
+  fill: rgba(100,100,255,0.5);
+}
+#Ellipse_2_2 {
+  transform: translateY(-36%) translateX(17%);
+  animation: three ease 10s infinite;
+}
+#Ellipse_3 {
+  transform: translateY(35%) translateX(17%);
+  animation: two ease 10s infinite;
+}
+#Ellipse_4 {
+  animation: one ease 10s infinite;
+}
+
+@keyframes one{
+   0% {
+    transform: translateX(0%);
+   }
+   8% {
+    transform: translateX(-35%);
+   }
+   16% {
+    transform: translateX(0%);
+   }
+   100%{
+    transform: translateX(0%);
+   }
+  }
+@keyframes two{
+   0% {
+    transform: translateX(0%);
+   }
+   8% {
+    transform: translateY(35%) translateX(17%);
+   }
+   16% {
+    transform: translateX(0%);
+   }
+   100%{
+    transform: translateX(0%);
+   }
+  }
+@keyframes three{
+   0% {
+    transform: translateX(0%);
+   }
+   8% {
+    transform: translateY(-36%) translateX(17%);
+   }
+   16% {
+    transform: translateX(0%);
+   }
+   100%{
+    transform: translateX(0%);
+   }
+  }
+</style>
+
+<svg width="120" height="100" id="button" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group_3">
+<g id="Group_2">
+<circle id="Ellipse_1" cx="27" cy="30" r="24.5" />
+<circle id="Ellipse_2" cx="27" cy="30" r="24.5" />
+</g>
+<g id="Group_1">
+<circle id="Ellipse_2_2" cx="6" cy="42" r="6" />
+<circle id="Ellipse_3" cx="27" cy="6" r="6"  />
+<circle id="Ellipse_4" cx="48" cy="41" r="6" />
+</g>
+</g>
+</svg>
+

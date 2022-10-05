@@ -1,0 +1,42 @@
+---
+import Layout from "~/layouts/BaseLayout.astro";
+import Page from "~/layouts/PageLayout.astro";
+import Footer from "~/components/footer/Footer.astro";
+import Bubble from "~/components/sidebar/CollapsibleSidebar.astro";
+import Alignment from "~/components/alignment/Alignment.astro";
+import LogoCard from "~/components/card/LogoCard.astro";
+import FiveCard from "~/components/gridsection/FiveCard.astro";
+import FourCard from "~/components/gridsection/FourCard.astro";
+import ThreeCard from "~/components/gridsection/ThreeCard.astro";
+import TwoCard from "~/components/gridsection/TwoCard.astro";
+import OneCard from "~/components/gridsection/OneCard.astro";
+import ImageCard from "~/components/card/ImageCard.astro";
+import Paragraph from "~/components/card/ParagraphCard.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+import ThreeColumns from "~/components/flexsection/ThreeColumns.astro";
+import OneColumn from "~/components/flexsection/OneColumn.astro";
+import TitleSuperscript from "~/components/sectiontitle/TitleSuperscript.astro";
+import TitleSubscript from "~/components/sectiontitle/TitleSubscript.astro";
+import Title from "~/components/sectiontitle/Title.astro";
+import SmallHeading from "~/components/card/elements/SmallHeading.astro";
+import BasicText from "~/components/card/elements/BasicText.astro";
+import SmallLink from "~/components/card/elements/SmallLink.astro";
+import AnimatedIcon from "~/components/card/elements/AnimatedIcon.astro";
+import BreakRightOverlay from "~/components/sectionbreak/BreakRightOverlay.astro";
+import ButtonCard from "~/components/card/ButtonCard.astro";
+import LargeText from "~/components/card/elements/LargeText.astro";
+import CardButton from "~/components/card/elements/CardButton.astro";
+import LargeHeading from "~/components/card/elements/LargeHeading.astro";
+import BreakDiagonal from "~/components/sectionbreak/BreakDiagonal.astro";
+import Form from "~/components/contact/Form.astro";
+
+
+import {Image} from "@astrojs/image/components";
+---
+<Page leftcolor="purple" rightcolor="purple" maincolor="purple">
+  <Title setclass="ml-10 mt-8 h-12 border-4 border-gray-50" title="Contact" color="white"/>
+  <Form/>
+  <BreakDiagonal top="purple" bottom="black"/>
+</Page>
+
+

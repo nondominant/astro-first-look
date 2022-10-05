@@ -3,7 +3,6 @@
 // let accumulation = 0;
 let prevPos = 0;
 let isScrollingUp = false;
-
 const root = document.documentelement;
 
 function flip(attr , state, listenerArray) {
@@ -15,20 +14,16 @@ function flip(attr , state, listenerArray) {
 function scrollHandler(listenerArray) {
   const pos = window.scrollY;
   const delta = pos - prevPos;
-
   const scrollDirection = Math.sign(delta) === -1;
   const isBottom = pos + window.innerHeight > document.body.offsetHeight - 100;
   const isTop = pos < 50;
-
   if (delta < -15 || delta > 15) {
     isScrollingUp = scrollDirection;
   }
   // console.log({ accumulation, delta });
-
   flip('is-scrolling-up', isScrollingUp, listenerArray);
   flip('is-bottom', isBottom, listenerArray);
   flip('is-top', isTop, listenerArray);
-
   prevPos = pos;
   // console.log({ pos });
 }

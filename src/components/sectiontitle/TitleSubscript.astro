@@ -1,5 +1,5 @@
 ---
-const {title, subscript} = Astro.props;
+const {setclass, title, subscript, primary, secondary} = Astro.props;
 ---
 
 <style>
@@ -25,6 +25,6 @@ const {title, subscript} = Astro.props;
 </style>
 
   <div class="container">
-  <h1>{title}</h1>
-  <h3>{subscript}</h3>
+  <h1 style=`color: ${primary};` >{title}</h1>
+  <h3 class={setclass} style=`color: ${secondary};` >{subscript}</h3>
   </div>

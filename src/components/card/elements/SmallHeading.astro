@@ -1,5 +1,5 @@
 ---
-const { heading } = Astro.props;
+const { setclass, heading, color } = Astro.props;
 ---
 
 <style>
@@ -8,20 +8,20 @@ const { heading } = Astro.props;
     position: absolute;
     top: 0;
     left: -1rem;
-    border-left: blue solid 1px;
+    border-left: rgba(6, 243, 246, 0.8) solid 1px;
     height: 1rem;
     width: 1rem;
   }
   h4 {
     position: relative;
-    font-family: "sohne-var","Helvetica Neue","Arial",sans-serif;
+    font-family: var(--font-main);
     font-weight: 550;
-    font-size: 1rem;
+    font-size: 1.2rem!important;
     margin-bottom: 1rem;
   }
 </style>
 
 <>
-<h4>{heading}</h4>
+<h4 class={setclass} style=`color: ${color};` >{heading}</h4>
 </>
 

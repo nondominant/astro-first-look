@@ -1,32 +1,16 @@
 ---
-import Layout from "~/layouts/BaseLayout.astro";
-import Header from "~/components/navbar/Header.astro";
-import Hero from "~/components/hero/FlexHero.astro";
-import Footer from "~/components/footer/Footer.astro";
 import "./page-style.css";
-import "./reset.css";
-import BasicScripts from "~/components/core/BasicScripts.astro";
+const { leftcolor, maincolor, rightcolor } = Astro.props;
 ---
 
-<Layout>
-  <body>
-    <Header/>
-    <Hero/>
-    <div class="row">
-
-      <div class="leftside">
-        <slot name="leftside"/>
-      </div>
-
-      <div class="main">
-        <slot/>
-      </div>
-
-      <div class="rightside">
-        <slot name="rightside"/>
-      </div>
-
-    </div>
-  <BasicScripts defer/>
-  </body>
-</Layout>
+<div class="row">
+  <div style=`background: ${leftcolor};` class="leftside">
+    <slot name="leftside"/>
+  </div>
+  <div style=`background: ${maincolor};` class="main">
+    <slot/>
+  </div>
+  <div style=`background: ${rightcolor};` class="rightside">
+    <slot name="rightside"/>
+  </div>
+</div>

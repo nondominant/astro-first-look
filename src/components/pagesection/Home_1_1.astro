@@ -1,0 +1,20 @@
+---
+import LargeText from "~/components/card/elements/LargeText.astro";
+import LargeHeading from "~/components/card/elements/LargeHeading.astro";
+import ButtonCard from "~/components/card/ButtonCard.astro";
+import Page from "~/layouts/PageLayout.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+
+import {Image} from "@astrojs/image/components";
+---
+
+<Page leftcolor="white" rightcolor="white" maincolor="white">
+  <TwoColumns>
+  <ButtonCard slot="left">
+    <LargeHeading heading="Phones have changed and so has business" slot="heading"/>
+    <LargeText paragraph="Page ranking is an important tool in your marketing strategy and now relies heavily on the latency of your site. A slow site can mean you won't be seen by customers at all. " slot="paragraph"/>
+  </ButtonCard>
+    <Image slot="right" alt="" src={import('~/assets/images/telephonecord_clear.webp')} width=600 aspectRatio="55:44"/>
+  </TwoColumns>
+</Page>
+

@@ -1,0 +1,22 @@
+---
+const { setclass, text, href } = Astro.props;
+---
+
+<style>
+  a {
+    text-decoration: none;
+    font-family: var(--font-main);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: purple;
+    border-radius: 1rem;
+  }
+  a:hover {
+    background: black;
+  }
+</style>
+
+  <a class={setclass} href=`${href}`>{text}</a>
+

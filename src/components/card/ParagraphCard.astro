@@ -1,20 +1,27 @@
 ---
+const { setclass="" } = Astro.props;
 ---
 <style>
   .container {
+    font-family: var(--font-main);
     display: flex;
+    position: relative;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     padding-left: 1rem;
-    padding-right: 6rem;
+    padding-right: 1rem;
+    z-index: 2;
   }
 </style>
 
 
- <div class="container">
-   <slot name="icon"/>
-   <slot name="heading"/>
-   <slot name="paragraph"/>
-   <slot name="link"/>
+  <div class=`container ${setclass}` x-data="{shown: false}" x-intersect.margin.-200px.threshold.99="shown = true">
+  <div class="" x-show="shown"
+       x-transition>
+  <slot name="icon"/>
+  <slot name="heading"/>
+  <slot name="paragraph"/>
+  <slot name="link"/>
+  </div>
 </div>
 

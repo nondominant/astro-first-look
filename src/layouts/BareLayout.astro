@@ -1,0 +1,30 @@
+---
+import "./base-style.css";
+import "./reset.css";
+import ScrollObserver from "~/js/ScrollObserver.astro";
+import Header from "~/components/navbar/Header.astro";
+import Hero from "~/components/hero/FlexHero.astro";
+import Footer from "~/components/pagesection/Footer_1.astro";
+import BasicScripts from "~/components/core/BasicScripts.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <ScrollObserver />
+  <title>glucode.xyz</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+<div class="overflow-x-clip">
+  <Header color="rgba(2, 2, 2, 1)" link1="glucode.xyz" link2="Contact Us" link3="Github" link4="What we do"/>
+  <div class="w-screen h-[11rem]"></div>
+  <slot />
+  <Footer/>
+  <BasicScripts defer/>
+</div>
+</body>
+</html>

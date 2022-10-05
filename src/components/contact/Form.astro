@@ -1,0 +1,80 @@
+---
+import Page from "~/layouts/PageLayout.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+
+import {Image} from "@astrojs/image/components";
+
+import Layout from "~/layouts/BaseLayout.astro";
+import Page from "~/layouts/PageLayout.astro";
+import Footer from "~/components/footer/Footer.astro";
+import Bubble from "~/components/sidebar/CollapsibleSidebar.astro";
+import Alignment from "~/components/alignment/Alignment.astro";
+import LogoCard from "~/components/card/LogoCard.astro";
+import FiveCard from "~/components/gridsection/FiveCard.astro";
+import FourCard from "~/components/gridsection/FourCard.astro";
+import ThreeCard from "~/components/gridsection/ThreeCard.astro";
+import TwoCard from "~/components/gridsection/TwoCard.astro";
+import OneCard from "~/components/gridsection/OneCard.astro";
+import ImageCard from "~/components/card/ImageCard.astro";
+import Paragraph from "~/components/card/ParagraphCard.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+import ThreeColumns from "~/components/flexsection/ThreeColumns.astro";
+import OneColumn from "~/components/flexsection/OneColumn.astro";
+import TitleSuperscript from "~/components/sectiontitle/TitleSuperscript.astro";
+import TitleSubscript from "~/components/sectiontitle/TitleSubscript.astro";
+import Title from "~/components/sectiontitle/Title.astro";
+import SmallHeading from "~/components/card/elements/SmallHeading.astro";
+import BasicText from "~/components/card/elements/BasicText.astro";
+import SmallLink from "~/components/card/elements/SmallLink.astro";
+import BreakRightOverlay from "~/components/sectionbreak/BreakRightOverlay.astro";
+import BreakDiagonal from "~/components/sectionbreak/BreakDiagonal.astro";
+---
+
+
+<form style="font-family: var(--font-main);" class="space-y-5 m-10">
+<div class="flex flex-col items-start">
+<input type="text" id="firstname" placeholder="John Doe" class="peer h-14 px-4 py-2 w-full 
+border border-slate-600 placeholder-transparent" />
+<label for="firstname" class="ml-4 -mt-20 mb-20 text-xs text-blue-50  
+peer-placeholder-shown:text-gray-400 
+peer-placeholder-shown:-mt-10
+peer-placeholder-shown:mb-7
+peer-placeholder-shown:text-base 
+duration-300">
+  First Name
+</label>
+</div>
+<div class="flex flex-col items-start">
+<input type="email" id="email" placeholder="John Doe" class="peer h-14 px-4 py-2 w-full 
+border border-slate-600 placeholder-transparent" />
+<label for="email" class="ml-4 -mt-20 mb-20 text-xs text-blue-50  
+peer-placeholder-shown:text-gray-400 
+peer-placeholder-shown:-mt-10
+peer-placeholder-shown:mb-7
+peer-placeholder-shown:text-base 
+duration-300">
+  Email
+</label>
+</div>
+<div class="flex flex-col items-start">
+<input type="text" id="company" placeholder="John Doe" class="peer h-14 px-4 py-2 w-full 
+border border-slate-600 placeholder-transparent" />
+<label for="company" class="ml-4 -mt-20 mb-20 text-xs text-blue-50  
+peer-placeholder-shown:text-gray-400 
+peer-placeholder-shown:-mt-10
+peer-placeholder-shown:mb-7
+peer-placeholder-shown:text-base 
+duration-300">
+  Company Name
+</label>
+</div>
+<div class="flex flex-col items-start">
+  <button style="font-family: var(--font-main);" 
+          class="rounded-full bg-white w-24 h-10 border-1 border-transparent-500 text-slate-900 hover:bg-black hover:text-slate-50" 
+          type="submit">Submit</button>
+</div>
+</form>
+
+
+
+

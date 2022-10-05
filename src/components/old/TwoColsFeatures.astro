@@ -1,0 +1,60 @@
+---
+const { } = Astro.props;
+
+const items = [
+  [
+    {
+      title: "Integration with Tailwind CSS",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+    },
+    {
+      title: "Ready-to-use Components",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+    },
+    {
+      title: "Best Practices",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+    },
+  ],
+  [
+    {
+      title: "Excelent Page Speed",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+    },
+    {
+      title: "Frequently updated",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+    },
+    {
+      title: "Open to new ideas and contributions",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
+    },
+  ],
+];
+
+---
+<section >
+<p> Features </p>
+<h2> What's interesting about <span>AstroWind </span> </h2>
+
+<p>
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+accusantium doloremque rem aperiam, eaque ipsa quae.
+</p>
+
+{ items.map((subitems) => 
+  { subitems.map(({ title, description }) =>  
+    {
+      <svg > <g fill="none" fill-rule="evenodd"> <rect/> <g stroke-linecap="square" stroke-width="2"> <path ></path> <path > </path> </g> </g> </svg>
+      <h3> {title} </h3>
+      <p> {description} </p>
+    }
+  )}
+)}
+</section>

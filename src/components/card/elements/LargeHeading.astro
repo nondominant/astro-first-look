@@ -1,0 +1,17 @@
+---
+const { setclass, heading, color } = Astro.props;
+---
+
+<style>
+  h4 {
+    font-family: var(--font-main);
+    font-weight: 650;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<>
+<h4 class={setclass} style=`color: ${color};` >{heading}</h4>
+</>
+

@@ -1,0 +1,49 @@
+---
+import Page from "~/layouts/PageLayout.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+
+import {Image} from "@astrojs/image/components";
+
+import Layout from "~/layouts/BaseLayout.astro";
+import Page from "~/layouts/PageLayout.astro";
+import Footer from "~/components/footer/Footer.astro";
+import Bubble from "~/components/sidebar/CollapsibleSidebar.astro";
+import Alignment from "~/components/alignment/Alignment.astro";
+import LogoCard from "~/components/card/LogoCard.astro";
+import FiveCard from "~/components/gridsection/FiveCard.astro";
+import FourCard from "~/components/gridsection/FourCard.astro";
+import ThreeCard from "~/components/gridsection/ThreeCard.astro";
+import TwoCard from "~/components/gridsection/TwoCard.astro";
+import OneCard from "~/components/gridsection/OneCard.astro";
+import ImageCard from "~/components/card/ImageCard.astro";
+import Paragraph from "~/components/card/ParagraphCard.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+import ThreeColumns from "~/components/flexsection/ThreeColumns.astro";
+import OneColumn from "~/components/flexsection/OneColumn.astro";
+import TitleSuperscript from "~/components/sectiontitle/TitleSuperscript.astro";
+import TitleSubscript from "~/components/sectiontitle/TitleSubscript.astro";
+import Title from "~/components/sectiontitle/Title.astro";
+import SmallHeading from "~/components/card/elements/SmallHeading.astro";
+import BasicText from "~/components/card/elements/BasicText.astro";
+import SmallLink from "~/components/card/elements/SmallLink.astro";
+import BreakRightOverlay from "~/components/sectionbreak/BreakRightOverlay.astro";
+import BreakDiagonal from "~/components/sectionbreak/BreakDiagonal.astro";
+---
+
+<Page leftcolor="black" rightcolor="black" maincolor="black">
+  <TwoColumns background="black">
+  <OneCard slot="left">
+    <TitleSuperscript title="Optimise for Mobile" setclass="text-indigo-500" superscript="Reach your customers" primary="white" slot="one"/>
+    <Paragraph slot="two">
+      <SmallHeading color="white" heading="Responsive Design" slot="heading"/>
+      <BasicText color="white" paragraph="Websites that are optimised for mobile phones so your customers can navigate freely regardless of which device they use to visit your site" slot="paragraph"/>
+      <SmallLink href="/about/" text="test your current site" slot="link"/>
+    </Paragraph>
+  </OneCard>
+    <Image slot="right" alt="" src={import('~/assets/images/phone_gmail_clear.webp')} width=200 aspectRatio="9:16"/>
+  </TwoColumns>
+  <BreakDiagonal top="black" bottom="white"/>
+</Page>
+
+
+

@@ -1,5 +1,5 @@
 ---
-const {title} = Astro.props;
+const {setclass, title, color} = Astro.props;
 ---
 
 <style>
@@ -18,7 +18,5 @@ const {title} = Astro.props;
 
 </style>
 
-<div class="container">
-<h1>{title}</h1>
-</div>
+    <h1 class={setclass} style=`color: ${color};` >{title}</h1>
 

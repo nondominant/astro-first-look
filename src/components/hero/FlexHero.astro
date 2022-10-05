@@ -5,13 +5,17 @@ import './flexhero.css';
 <!-- the background image is applied to the .hero class using
   css -->
 <style>
-  h1, h2, a {
+  h2 {
+    font-family: var(--font-main);
     font-weight: 900;
     text-decoration: none;
     color: white;
   }
-  h2 {
-    padding: 1em;
+  h1 {
+    font-family: var(--brand);
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
   }
   [data-is-top="true"] .hero-inner h1{
     opacity: 1;
@@ -23,23 +27,31 @@ import './flexhero.css';
   }
   [data-is-top="true"] .hero-inner h2{ opacity: 1;transition: all 1s ease; }
   [data-is-top="false"] .hero-inner h2{ opacity: 0;transition: all 1s ease; }
-  [data-is-top="true"] .hero-inner a{ opacity: 1;transition: all 1s ease; }
-  [data-is-top="false"] .hero-inner a{ opacity: 0;transition: all 1s ease; }
+  [data-is-top="true"] .hero-inner a{ opacity: 1;transition: opacity 1s ease; }
+  [data-is-top="false"] .hero-inner a{ opacity: 0;transition: opacity 1s ease; }
   a{
-    background: grey;
+    font-weight: 900;
+    text-decoration: none;
+    background: transparent;
     padding: 3px 6px;
     border-radius: 6px;
+    border: solid 2px transparent; 
   }
   a:hover {
-    border: solid 2px rgba(240, 165, 2,1);
+    display: block;
+    color: white;
+    border: solid 2px white;
+  }
+  .btn {
+    color: white;
   }
 </style>
 
 <section class="hero scrollobserver">
-  <div class="hero-inner">
-    <h1>Better than Spindle</h1>
-  <h2>Look at this website and bask in its amazing glory!</h2>
-  <a href="https://example.com/" class="btn">Go ahead</a>
+  <div class="flex flex-col h-auto w-screen border-8 ">
+    <h1 style="font-family: var(--brand); font-size: 6rem;">GluCode Studio</h1>
+  <h2 class="text-indigo-50 md:text-lg sm:text-sm">Hand crafted websites for lightning fast load times</h2>
+  <!--  <a href="https://example.com/" class="btn">See How</a> -->
   </div>
 </section>
 

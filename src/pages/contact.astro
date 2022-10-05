@@ -1,6 +1,19 @@
 ---
-import Page from "~/layouts/PageLayout.astro";
----
+import Layout from "~/layouts/BareLayout.astro";
 
-<Page>
-</Page>
+import SectionOne from "~/components/pagesection/Home_1_1.astro";
+import SectionTwo from "~/components/pagesection/Home_1_2.astro";
+import SectionThree from "~/components/pagesection/Home_1_3.astro";
+import SectionFour from "~/components/pagesection/Home_1_4.astro";
+import SectionFive from "~/components/pagesection/Home_1_5.astro";
+import SectionSix from "~/components/pagesection/Home_1_6.astro";
+import ContactOne from "~/components/pagesection/Contact_1_1.astro";
+import ContactTwo from "~/components/pagesection/Contact_1_2.astro";
+import Footer from "~/components/pagesection/Footer_1.astro";
+import Form from "~/components/contact/Form.astro";
+---
+<Layout>
+  <ContactOne/>
+  <ContactTwo/>
+</Layout>
+

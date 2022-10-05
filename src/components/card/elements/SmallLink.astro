@@ -1,11 +1,13 @@
 ---
-const { linktext, href} = Astro.props;
+const {setclass="", text, href} = Astro.props;
 ---
 <style>
   a {
+    text-decoration: none;
+    font-family: var(--font-main);
     font-size: 1rem;
     font-weight: 600;
   }
 </style>
 
-<a href=`${href}`>{linktext}</a>
+  <a class={setclass} href=`${href}`> {text} </a>

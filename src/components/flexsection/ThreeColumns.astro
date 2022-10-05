@@ -1,44 +1,49 @@
 ---
+const { background="transparent" } = Astro.props;
 ---
-
 <style>
   .section {
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-height: 80vw;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255,100,255,0.5);
+    min-height: 70vh;
   }
   .left {
+    display: flex;
+    flex-direction: column;
     width: 33%;
-    height: 100%;
-    border: red solid 2px;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
   }
   .right {
+    display: flex;
+    flex-direction: column;
     width: 33%;
-    height: 100%;
-    border: green solid 2px;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
   }
   .middle {
+    display: flex;
+    flex-direction: column;
     width: 33%;
-    height: 100%;
-    border: blue solid 2px;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
   }
   @media (max-width: 860px){
-    .section{
+    .section {
       flex-direction: column;
     }
     .left, .right, .middle {
       width: 100%;
     }
-
   }
 </style>
 
-<div class="section">
-  <div class="left"><slot name="left"/></div>
-  <div class="middle"><slot name="middle"/></div>
-  <div class="right"><slot name="right"/></div>
+<div style=`background: ${background};` class="section">
+  <div style=`background: ${background};` class="left"><slot name="left"/></div>
+  <div style=`background: ${background};` class="middle"><slot name="middle"/></div>
+  <div style=`background: ${background};` class="right"><slot name="right"/></div>
 </div>

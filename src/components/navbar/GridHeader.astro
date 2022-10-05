@@ -1,0 +1,125 @@
+---
+const { link1, link2, link3, link4 } = Astro.props;
+---
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+nav {
+  width: 100vw;
+}
+li, ul {
+  font-family: var(--font-main);
+  list-style: none;
+}
+[data-is-top="true"] .menu{
+  opacity: 1;
+}
+[data-is-scrolling-up="false"] .menu{
+  opacity: 0;
+  transition: all ease 500ms;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 10rem;
+  background: black;
+  transition: all ease 500ms;
+  z-index: 99;
+}
+.menu a {
+  font-family: var(--font-main);
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.menu ul {
+  justify-items: center;
+  width: 100%;
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.menu button:hover {
+  background: var(--background);
+  border: var(--foreground) solid 1px;
+}
+@media (max-width: 680px) {
+  .menu button {
+    font-family: var(--font-main);
+  }
+  .menu li {
+    justify-items: center;
+    align-items: center;
+    padding: 0rem;
+    width: 100%;
+  }
+  .menu ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .login { grid-area: 1 / 1 / 2 / 2; }
+  .signup{ grid-area: 2 / 1 / 3 / 2; }
+  .link1 { grid-area: 3 / 1 / 4 / 2; }
+  .link2 { grid-area: 4 / 1 / 5 / 2; }
+  .link3 { grid-area: 5 / 1 / 6 / 2; }
+  .link4 { grid-area: 6 / 1 / 7 / 2; }
+}
+@media (min-width: 680px) {
+  .menu li {
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .menu ul {
+    grid-template-columns: 4rem 1fr 4fr repeat(3, 1fr) 3fr repeat(2, 1fr) 4rem;
+    grid-template-rows: 1fr;
+  }
+  .link1  { grid-area: 1 / 2 / 2 / 3; }
+  .link2  { grid-area: 1 / 3 / 2 / 5; }
+  .link3  { grid-area: 1 / 5 / 2 / 6; }
+  .link4  { grid-area: 1 / 6 / 2 / 8; }
+  .login  { grid-area: 1 / 8 / 2 / 9; }
+  .signup { grid-area: 1 / 9 / 2 / 10; }
+}
+
+.login button{ 
+  font-family: var(--font-main);
+  background: var(--primary);
+}
+.signup button{ 
+  font-family: var(--font-main);
+  background: grey;
+}
+.menu button {
+  font-family: var(--font-main);
+  border: none;
+  border: transparent solid 1px;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: 1.2rem;
+  color: white;
+}
+</style>
+
+
+<header class="scrollobserver">
+<nav aria-label="Main navigation" class="menu">
+<ul>
+  <li class="link1"> <a href="#">{link1}</a> </li>
+  <li class="link2"> <a href="#">{link2}</a> </li>
+  <li class="link3"> <a href="#">{link3}</a> </li>
+  <li class="link4"> <a href="https://github.com/onwidget/astrowind">{link4}</a> </li>
+<li class="login"> <button type="button" aria-label="Toggle between Dark and Light mode">Login</button> </li>
+<li class="signup"> <button aria-label="Toggle Menu">Sign up</button></li>
+</ul>
+</nav>
+</header>

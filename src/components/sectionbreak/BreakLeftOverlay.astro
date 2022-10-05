@@ -1,8 +1,29 @@
 ---
 import './breakleftoverlay.css';
+const { background } = Astro.props;
 ---
+<style>
+  .left-pagebreak {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  background: transparent; 
+}
 
-<div class="left-pagebreak">
+.left-overlay {
+  position: absolute;
+  top: -20vh;
+  left: 0;
+  width: 20%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+</style>
+
+<div style=`background: ${background};` class="left-pagebreak">
   <div class="left-overlay">
     <slot/>
   </div>

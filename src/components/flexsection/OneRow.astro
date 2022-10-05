@@ -1,0 +1,16 @@
+---
+const { background } = Astro.props;
+---
+
+<style>
+  .section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 50vh;
+  }
+</style>
+
+  <div style=`background: ${background};` class="section">
+  <slot/>
+</div>

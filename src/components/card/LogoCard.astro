@@ -1,0 +1,33 @@
+---
+const {background="transparent", color} = Astro.props;
+---
+<style>
+  h1 {
+    font-family: var(--font-main);
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  .main {
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 2rem;
+    z-index: 2;
+  }
+  .tagline {
+    font-style: italic;
+  }
+  .sub {
+    margin-top: auto;
+  }
+</style>
+
+
+<div class="main" style=`background: ${background};`>
+  <h1 style=`color: ${color}` >Esrever.com</h1>
+  <p style=`color: ${color}` class="tagline">Powered by <span class="emphasis">Esrever hosting services</span></p>
+  <p style=`color: ${color}` class="sub">Designed by Ezra Fonua</p>
+  <p style=`color: ${color}` >© 2022 Esrever.com, Inc.</p>
+
+</div>

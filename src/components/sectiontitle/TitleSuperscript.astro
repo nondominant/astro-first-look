@@ -1,5 +1,5 @@
 ---
-const {title, superscript, primary, secondary} = Astro.props;
+const {setclass="", title, superscript, primary, secondary} = Astro.props;
 ---
 
 <style>
@@ -24,6 +24,6 @@ const {title, superscript, primary, secondary} = Astro.props;
 </style>
 
   <div class="container">
-    <h3 style=`color: ${secondary};`>{superscript}</h3>
+    <h3 class={setclass} style=`color: ${secondary};`>{superscript}</h3>
     <h1 style=`color: ${primary};`>{title}</h1>
   </div>

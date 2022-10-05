@@ -1,0 +1,32 @@
+---
+---
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    padding-right: 6rem;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+</style>
+
+
+<div class="container" x-data="{shown: false}" x-intersect.margin.-200px.threshold.99="shown = true">
+  <div x-show="shown"
+       x-transition.duration.700ms>
+   <slot name="icon"/>
+   <slot name="heading"/>
+   <slot name="paragraph"/>
+   <div class="footer">
+   <slot name="button"/>
+   <slot name="link"/>
+   </div>
+  </div>
+</div>
+

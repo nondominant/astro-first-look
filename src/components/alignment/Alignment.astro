@@ -1,0 +1,13 @@
+---
+const { align, background="transparent" } = Astro.props;
+---
+<style>
+  .main {
+    display: flex;
+    flex-direction: inherit;
+  }
+</style>
+
+  <div class="main" style=`background: ${background}; align-items: ${align}; justify-content: ${align};` >
+  <slot/>
+</div>

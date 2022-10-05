@@ -1,6 +1,23 @@
+:root {
+  --foreground: white;
+  --background: black;
+  --primary: green;
+  --secondary: purple;
+
+  --font-main: "sohne-var","Helvetica Neue","Arial",sans-serif;
+  --brand: "brand";
+}
+@font-face {
+  font-family: brand;
+  src: url("~/assets/styles/FjallaOne-Regular.ttf");
+}
 body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
 }
+body p {
+  line-height: 1.5;
+}
+
 

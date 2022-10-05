@@ -1,16 +1,15 @@
 ---
-const { paragraph } = Astro.props;
+const { setclass, paragraph, color='rgba(50,50,50,1)' } = Astro.props;
 ---
 
 <style>
   p {
-    font-family: "sohne-var","Helvetica Neue","Arial",sans-serif;
-    font-size: 1rem;
-    color: rgba(50,50,50,1);
+    font-family: var(--font-main);
+    font-size: 1rem !important;
     margin-bottom: 1rem;
     z-index: 90;
   }
 </style>
 
- <p>{paragraph}</p>
+  <p class={setclass} style=`color: ${color};` >{paragraph}</p>
 

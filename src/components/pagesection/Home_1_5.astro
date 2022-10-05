@@ -1,0 +1,62 @@
+---
+import Layout from "~/layouts/BaseLayout.astro";
+import Page from "~/layouts/PageLayout.astro";
+import Footer from "~/components/footer/Footer.astro";
+import Bubble from "~/components/sidebar/CollapsibleSidebar.astro";
+import Alignment from "~/components/alignment/Alignment.astro";
+import LogoCard from "~/components/card/LogoCard.astro";
+import FiveCard from "~/components/gridsection/FiveCard.astro";
+import FourCard from "~/components/gridsection/FourCard.astro";
+import ThreeCard from "~/components/gridsection/ThreeCard.astro";
+import TwoCard from "~/components/gridsection/TwoCard.astro";
+import OneCard from "~/components/gridsection/OneCard.astro";
+import ImageCard from "~/components/card/ImageCard.astro";
+import Paragraph from "~/components/card/ParagraphCard.astro";
+import TwoColumns from "~/components/flexsection/TwoColumns.astro";
+import ThreeColumns from "~/components/flexsection/ThreeColumns.astro";
+import OneColumn from "~/components/flexsection/OneColumn.astro";
+import TitleSuperscript from "~/components/sectiontitle/TitleSuperscript.astro";
+import TitleSubscript from "~/components/sectiontitle/TitleSubscript.astro";
+import Title from "~/components/sectiontitle/Title.astro";
+import SmallHeading from "~/components/card/elements/SmallHeading.astro";
+import BasicText from "~/components/card/elements/BasicText.astro";
+import SmallLink from "~/components/card/elements/SmallLink.astro";
+import AnimatedIcon from "~/components/card/elements/AnimatedIcon.astro";
+import BreakRightOverlay from "~/components/sectionbreak/BreakRightOverlay.astro";
+import ButtonCard from "~/components/card/ButtonCard.astro";
+import LargeText from "~/components/card/elements/LargeText.astro";
+import CardButton from "~/components/card/elements/CardButton.astro";
+import LargeHeading from "~/components/card/elements/LargeHeading.astro";
+import BreakDiagonal from "~/components/sectionbreak/BreakDiagonal.astro";
+
+
+import {Image} from "@astrojs/image/components";
+---
+
+<Page leftcolor="white" rightcolor="white" maincolor="white">
+  <OneColumn>
+  <FourCard >
+    <Title title="Benefits of a lightning fast website" slot="one"/>
+    <Paragraph slot="two">
+      <SmallHeading heading="User Experience" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" text="Read more" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="three">
+      <SmallHeading heading="Google Page Rank" slot="heading"/>
+      <BasicText paragraph="Google now ranks faster loading pages higher, test your current sites lighthouse score today" slot="paragraph"/>
+      <SmallLink href="https://pagespeed.web.dev/" text="speed test" slot="link"/>
+    </Paragraph>
+    <Paragraph slot="four">
+      <SmallHeading heading="Portability" slot="heading"/>
+      <BasicText paragraph="With a static website you aren't locked into a particular provider. You can host a static website with any hosting provider, or even on your own premises." slot="paragraph"/>
+    </Paragraph>
+    <Paragraph slot="five">
+      <SmallHeading heading="Send us a message" slot="heading"/>
+      <BasicText paragraph="Get up and running with Stripe in as little as 10 minutes." slot="paragraph"/>
+      <SmallLink href="/about/" text="Read more >" slot="link"/>
+    </Paragraph>
+  </FourCard>
+  </OneColumn>
+</Page>
+
